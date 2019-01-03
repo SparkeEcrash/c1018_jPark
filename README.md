@@ -1,1 +1,1 @@
-# c1018_jPark
+## Server Side README
