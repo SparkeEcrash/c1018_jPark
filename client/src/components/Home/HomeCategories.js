@@ -1,8 +1,4 @@
 import React from "react";
-import Kitchen from "../../images/categoryImg/kitchen-category.jpeg";
-import Bathroom from "../../images/categoryImg/bathroom-category.jpeg";
-import Livingroom from "../../images/categoryImg/livingroom-category.jpeg";
-import Patio from "../../images/categoryImg/patio-category.jpeg";
 
 const HomeCategories = () => {
   return (
@@ -28,7 +24,7 @@ const HomeCategories = () => {
               <div className="col-md-6 col-lg-3 my-3">
                 <div className="category-container">
                   <img
-                    src={Kitchen}
+                    src="/images/categoryImg/kitchen-category.jpeg"
                     className="img-fluid category-img"
                     alt="category img"
                   />
@@ -41,7 +37,7 @@ const HomeCategories = () => {
               <div className="col-md-6 col-lg-3 my-3">
                 <div className="category-container">
                   <img
-                    src={Bathroom}
+                    src="/images/categoryImg/bathroom-category.jpeg"
                     className="img-fluid category-img"
                     alt="category img"
                   />
@@ -54,7 +50,7 @@ const HomeCategories = () => {
               <div className="col-md-6 col-lg-3 my-3">
                 <div className="category-container">
                   <img
-                    src={Livingroom}
+                    src="/images/categoryImg/livingroom-category.jpeg"
                     className="img-fluid category-img"
                     alt="category img"
                   />
@@ -67,7 +63,7 @@ const HomeCategories = () => {
               <div className="col-md-6 col-lg-3 my-3">
                 <div className="category-container">
                   <img
-                    src={Patio}
+                    src="/images/categoryImg/patio-category.jpeg"
                     className="img-fluid category-img"
                     alt="category img"
                   />

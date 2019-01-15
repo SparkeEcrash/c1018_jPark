@@ -1,6 +1,6 @@
 .banner {
     min-height: calc(100vh - 101px);
-    background: url('../../images/pageBcg/bannerBcg.jpeg');
+    background: url('/images/pageBcg/bannerBcg.jpeg');
     background-position: center;
     background-size: cover;
     background-attachment: fixed;

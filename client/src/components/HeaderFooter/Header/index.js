@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Logo from '../../images/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class Header extends Component {
@@ -7,8 +6,8 @@ class Header extends Component {
     return (
       <header>
       <nav className="navbar navbar-expand-lg navbar-light">
-        <a href="index.html" className="navbar-brand">
-          <img src={Logo} alt="company logo" />
+        <a href="/" className="navbar-brand">
+          <img src="/images/logo.png" alt="company logo" />
         </a>
         <button
           className="navbar-toggler"
@@ -21,22 +20,22 @@ class Header extends Component {
         <div className="collapse navbar-collapse" id="myNavbar">
           <ul className="navbar-nav mx-auto">
             <li className="nav-item mx-2 nav-active">
-              <a href="index.html" className="nav-link">
+              <a href="/" className="nav-link">
                 Home
               </a>
             </li>
             <li className="nav-item mx-2">
-              <a href="products.html" className="nav-link">
+              <a href="/products" className="nav-link">
                 Products
               </a>
             </li>
             <li className="nav-item mx-2">
-              <a href="singleproduct.html" className="nav-link">
+              <a href="/single_product" className="nav-link">
                 Single Product
               </a>
             </li>
             <li className="nav-item mx-2">
-              <a href="store.html" className="nav-link">
+              <a href="/store" className="nav-link">
                 Store
               </a>
             </li>

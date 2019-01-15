@@ -1,9 +1,9 @@
 import React from 'react'
-import FeaturedProducts from './components/FeaturedProducts';
-import NewsLetter from './components/NewsLetter';
-import Skills from './components/Skills';
-import ProductsBanner from './Products/ProductsBanner';
-import ProductCatalog from './Products/ProductCatalog';
+import ProductsBanner from './ProductsBanner';
+import ProductCatalog from './ProductCatalog';
+import FeaturedProducts from '../Shared/FeaturedProducts';
+import NewsLetter from '../Shared/NewsLetter';
+import Skills from '../Shared/Skills';
 
 const Products = () => {
   return (

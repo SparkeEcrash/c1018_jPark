@@ -1,7 +1,7 @@
 import React from 'react'
-import Checkout1 from '../../images/img-products/product-2.png';
-import Checkout2 from '../../images/img-products/product-7.png';
-import Checkout3 from '../../images/img-products/product-1.png';
+const Checkout1 = '/images/img-products/product-2.png';
+const Checkout2 = '/images/img-products/product-7.png';
+const Checkout3 = '/images/img-products/product-1.png';
 
 
 function StoreCheckoutList() {

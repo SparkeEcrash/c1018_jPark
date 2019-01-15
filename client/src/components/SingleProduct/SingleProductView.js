@@ -1,6 +1,6 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Image1 from '../../images/img-products/product-1.png';
+const Image1 = '/images/img-products/product-1.png';
 
 
 function SingleProductView() {

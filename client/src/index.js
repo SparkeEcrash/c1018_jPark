@@ -1,5 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import './Resources/css/styles.css';
+// import './Resources/css/bootstrapmin.css';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import { BrowserRouter } from 'react-router-dom';
+import Routes from './Routes';
+
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+import ReduxThunk from 'redux-thunk';
+
+import Reducer from './reducers';
+
+const createStoreWithMiddleware = applyMiddleware(ReduxThunk)(createStore);
+
+ReactDOM.render(
+  <Provider store={createStoreWithMiddleware(Reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())}>
+    <BrowserRouter>
+      <Routes />
+    </BrowserRouter>
+  </Provider>
+, document.getElementById('root'));
