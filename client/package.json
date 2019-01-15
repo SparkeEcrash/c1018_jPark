@@ -1,0 +1,35 @@
+{
+  "name": "c1018_jpark_client",
+  "version": "0.1.0",
+  "description": "gityo_amiibo client",
+  "main": "index.js",
+  "proxy": {
+    "/api/*": {
+      "target": "http://localhost:9000"
+    }
+  },
+  "private": true,
+  "dependencies": {
+    "axios": "^0.18.0",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-scripts": "2.1.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "dev": "npm run dev --prefix .."
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "author": "James Park",
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
