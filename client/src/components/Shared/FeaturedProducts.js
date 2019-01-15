@@ -1,11 +1,11 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import image1 from '../../images/img-products/product-1.png';
-import image2 from '../../images/img-products/product-2.png';
-import image3 from '../../images/img-products/product-3.png';
-import image4 from '../../images/img-products/product-4.png';
-import image5 from '../../images/img-products/product-5.png';
-import image6 from '../../images/img-products/product-6.png';
+// import image1 from '../../images/img-products/product-1.png';
+// import image2 from '../../images/img-products/product-2.png';
+// import image3 from '../../images/img-products/product-3.png';
+// import image4 from '../../images/img-products/product-4.png';
+// import image5 from '../../images/img-products/product-5.png';
+// import image6 from '../../images/img-products/product-6.png';
 
 const FeaturedProducts = () => {
   return (
@@ -24,7 +24,7 @@ const FeaturedProducts = () => {
 					<div className="col-10 mx-auto col-md-6 col-lg-4">
 						<div className="featured-container p-5">
 							<img
-								src={image1}
+								src="/images/img-products/product-1.png"
 								className="img-fluid"
 								alt="product"
 							/>
@@ -50,7 +50,7 @@ const FeaturedProducts = () => {
 					<div className="col-10 mx-auto col-md-6 col-lg-4">
 						<div className="featured-container p-5">
 							<img
-								src={image2}
+								src="/images/img-products/product-2.png"
 								className="img-fluid"
 								alt="product"
 							/>
@@ -76,7 +76,7 @@ const FeaturedProducts = () => {
 					<div className="col-10 mx-auto col-md-6 col-lg-4">
 						<div className="featured-container p-5">
 							<img
-								src={image3}
+								src="/images/img-products/product-3.png"
 								className="img-fluid"
 								alt="product"
 							/>
@@ -102,7 +102,7 @@ const FeaturedProducts = () => {
 					<div className="col-10 mx-auto col-md-6 col-lg-4">
 						<div className="featured-container p-5">
 							<img
-								src={image4}
+								src="/images/img-products/product-4.png"
 								className="img-fluid"
 								alt="product"
 							/>
@@ -128,7 +128,7 @@ const FeaturedProducts = () => {
 					<div className="col-10 mx-auto col-md-6 col-lg-4">
 						<div className="featured-container p-5">
 							<img
-								src={image5}
+								src="/images/img-products/product-5.png"
 								className="img-fluid"
 								alt="product"
 							/>
@@ -154,7 +154,7 @@ const FeaturedProducts = () => {
 					<div className="col-10 mx-auto col-md-6 col-lg-4">
 						<div className="featured-container p-5">
 							<img
-								src={image6}
+								src="/images/img-products/product-6.png"
 								className="img-fluid"
 								alt="product"
 							/>

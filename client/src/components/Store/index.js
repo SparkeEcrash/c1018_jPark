@@ -1,9 +1,9 @@
 import React from 'react';
-import StoreBanner from './Store/StoreBanner';
-import StoreCheckoutList from './Store/StoreCheckoutList';
-import FeaturedProducts from './components/FeaturedProducts';
-import NewsLetter from './components/NewsLetter';
-import Skills from './components/Skills';
+import StoreBanner from './StoreBanner';
+import StoreCheckoutList from './StoreCheckoutList';
+import FeaturedProducts from '../Shared/FeaturedProducts';
+import NewsLetter from '../Shared/NewsLetter';
+import Skills from '../Shared/Skills';
 
 const Store = () => {
   return (
