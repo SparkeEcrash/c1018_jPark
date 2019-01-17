@@ -7,6 +7,7 @@ import Home from "./components/Home";
 import Products from "./components/Products";
 import SingleProduct from "./components/SingleProduct";
 import Store from "./components/Store";
+import Login from "./components/Login";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
@@ -55,6 +56,8 @@ const Routes = () => {
         <Route path="/products" exact component={Products} />
         <Route path="/single_product" exact component={SingleProduct} />
         <Route path="/store" exact component={Store} /> 
+        <Route path="/login" exact component={Login} /> 
+
       </Switch>
     </Layout>
   );
