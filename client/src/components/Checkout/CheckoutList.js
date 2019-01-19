@@ -4,7 +4,7 @@ const Checkout2 = '/images/img-products/product-7.png';
 const Checkout3 = '/images/img-products/product-1.png';
 
 
-function StoreCheckoutList() {
+function CheckoutList() {
   return (
     <section className="totals py-5">
       <div className="container-fluid">
@@ -129,4 +129,4 @@ function StoreCheckoutList() {
   )
 }
 
-export default StoreCheckoutList
+export default CheckoutList

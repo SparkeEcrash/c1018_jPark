@@ -9,7 +9,8 @@
 }
 
 .text-slanted {
-  font-family: "Calligraffitti", cursive;
+  font-family: "Fredoka One", cursive;
+  color: white;
 }
 
 .text-yellow {
@@ -76,7 +77,7 @@
 
 .nav-link {
   font-size: 1.6rem;
-  border-bottom: 0.1rem solid var(--mainWhite);
+  border-bottom: 0.1rem solid var(--mainGrey);
 }
 
 .nav-active {

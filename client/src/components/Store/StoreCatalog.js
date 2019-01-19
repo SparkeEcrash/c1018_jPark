@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-class ProductCatalog extends Component {
+class StoreCatalog extends Component {
   render() {
     return (
       <section className="products">
@@ -189,4 +189,4 @@ class ProductCatalog extends Component {
   }
 }
 
-export default ProductCatalog;
+export default StoreCatalog;
