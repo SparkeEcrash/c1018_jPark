@@ -7,6 +7,7 @@ const {User} = require('./../models/user');
 const { auth } = require('./../middleware/auth');
 
 router.post('/api/user/register', (req, res) => {
+  console.log('hello');
   const user = new User(req.body);
   user.save((err,doc) => {
     if(err) return res.json({success: false, err});
