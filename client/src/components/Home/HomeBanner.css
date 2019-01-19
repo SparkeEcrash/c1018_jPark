@@ -1,8 +1,15 @@
-.banner {
-    min-height: calc(100vh - 101px);
-    background: url('/images/pageBcg/bannerBcg.jpeg');
+.home-banner {
+    min-height: calc(100vh - 73.35px);
+    background: url('/img/background_three.jpg');
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
 }
+
+/* .banner-title{
+    background-color: white;
+    border: hotpink solid 3px;
+    border-radius: 20px 20px;
+    padding: 8px;
+} */

@@ -1,15 +1,15 @@
-import React from 'react'
-import ProductsBanner from './ProductsBanner';
-import ProductCatalog from './ProductCatalog';
+import React from 'react';
+import CheckoutBanner from './CheckoutBanner';
+import CheckoutList from './CheckoutList';
 import FeaturedProducts from '../Shared/FeaturedProducts';
 import NewsLetter from '../Shared/NewsLetter';
 import Skills from '../Shared/Skills';
 
-const Products = () => {
+const Store = () => {
   return (
     <div>
-      <ProductsBanner></ProductsBanner>
-      <ProductCatalog></ProductCatalog>
+      <CheckoutBanner></CheckoutBanner>
+      <CheckoutList></CheckoutList>
       <FeaturedProducts></FeaturedProducts>
       <NewsLetter></NewsLetter>
       <Skills></Skills>
@@ -17,4 +17,4 @@ const Products = () => {
   )
 }
 
-export default Products;
+export default Store;

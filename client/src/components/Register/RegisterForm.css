@@ -1,0 +1,13 @@
+.register-banner {
+  min-height: calc(100vh - 73.35px);
+  background: url('/img/background_two.jpg');
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+.dialog_alert {
+  padding: 51px;
+  font-size: 30px;
+}

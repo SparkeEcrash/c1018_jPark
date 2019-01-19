@@ -8,29 +8,29 @@ const Footer = () => {
 				<div className="row">
 					<div className="col-10 mx-auto text-center">
 						<h1 className="text-uppercase font-weight-bold text-yellow footer-title text-center d-inline-block">
-							comfy sloth
+							contact us
 						</h1>
 						<div className="footer-icons my-5 d-flex justify-content-center">
-							<a href="#" className="footer-icon mx-2">
+							{/* <a href="#" className="footer-icon mx-2"> */}
                 <FontAwesomeIcon icon={['fab', 'facebook']} />
-							</a>
-							<a href="#" className="footer-icon mx-2">
+							{/* </a> */}
+							{/* <a href="#" className="footer-icon mx-2"> */}
                 <FontAwesomeIcon icon={['fab', 'twitter']} />
-							</a>
-							<a href="#" className="footer-icon mx-2">
+							{/* </a> */}
+							{/* <a href="#" className="footer-icon mx-2"> */}
                 <FontAwesomeIcon icon={['fab', 'google-plus']} />
-							</a>
-							<a href="#" className="footer-icon mx-2">
+							{/* </a> */}
+							{/* <a href="#" className="footer-icon mx-2"> */}
                 <FontAwesomeIcon icon={['fab', 'instagram']} />
-							</a>
-							<a href="#" className="footer-icon mx-2">
+							{/* </a> */}
+							{/* <a href="#" className="footer-icon mx-2"> */}
                 <FontAwesomeIcon icon={['fab', 'youtube']} />
-							</a>
+							{/* </a> */}
 						</div>
-						<p className="text-muted text-capitalize w-75 mx-auto text-left">
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad voluptatibus laudantium officia ducimus illo dolore iusto commodi, voluptatum nihil libero?
+						<p className="text-muted text-capitalize w-75 mx-auto text-center">
+							© 2019 Gityo Amiibo
 						</p>
-						<div className="footer-contact mt-5 d-flex justify-content-around flex-wrap">
+						{/* <div className="footer-contact mt-5 d-flex justify-content-around flex-wrap">
 							<div className="text-capitalize">
 								<span className="footer-icon mr-2">
 									<FontAwesomeIcon icon="map"></FontAwesomeIcon>
@@ -49,7 +49,7 @@ const Footer = () => {
 								</span>
 								email : email@email.com
 							</div>
-						</div>
+						</div> */}
 					</div>
 				</div>
 			</div>

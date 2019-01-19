@@ -4,15 +4,18 @@ import './Resources/css/styles.css';
 // import './Resources/css/bootstrapmin.css';
 
 import { BrowserRouter } from 'react-router-dom';
-import Routes from './Routes';
+import Routes from './routes';
 
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
-import ReduxThunk from 'redux-thunk';
+import think from './middleware/think';
+import ourPromise from './middleware/promise';
+import logger from './middleware/logger';
+// import ReduxThunk from 'redux-thunk';
 
 import Reducer from './reducers';
 
-const createStoreWithMiddleware = applyMiddleware(ReduxThunk)(createStore);
+const createStoreWithMiddleware = applyMiddleware(ourPromise, think, logger)(createStore);
 
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(Reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())}>
