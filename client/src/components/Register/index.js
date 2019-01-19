@@ -1,11 +1,12 @@
-import React from 'react'
+import React from 'react';
+import RegisterBanner from './RegisterBanner';
 
-function index() {
+const Register = () => {
   return (
     <div>
-      Register
+      <RegisterBanner></RegisterBanner>
     </div>
   )
 }
 
-export default index
+export default Register;

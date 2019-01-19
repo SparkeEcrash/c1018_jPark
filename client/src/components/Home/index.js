@@ -1,11 +1,11 @@
 import React from 'react'
 import HomeBanner from './HomeBanner';
-import HomeFeatures from './HomeFeatures';
-import HomeCategories from './HomeCategories';
-import HomeFiller from './HomeFiller';
-import FeaturedProducts from '../Shared/FeaturedProducts';
-import NewsLetter from '../Shared/NewsLetter';
-import Skills from '../Shared/Skills';
+// import HomeFeatures from './HomeFeatures';
+// import HomeCategories from './HomeCategories';
+// import HomeFiller from './HomeFiller';
+// import FeaturedProducts from '../Shared/FeaturedProducts';
+// import NewsLetter from '../Shared/NewsLetter';
+// import Skills from '../Shared/Skills';
 
 const Home = () => {
   return (

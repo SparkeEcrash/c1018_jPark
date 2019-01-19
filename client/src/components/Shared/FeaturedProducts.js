@@ -33,11 +33,11 @@ const FeaturedProducts = () => {
 								data-toggle="modal"
 								data-target="#productModal"
 								><FontAwesomeIcon icon="search" /></span>
-							<a
+							{/* <a
 								href="#"
 								className="featured-store-link text-capitalize"
 								>add to cart</a
-							>
+							> */}
 						</div>
 						<h6 className="text-capitalize text-center my-2">
 							special product
@@ -59,11 +59,11 @@ const FeaturedProducts = () => {
 								data-toggle="modal"
 								data-target="#productModal"
 								><FontAwesomeIcon icon="search" /></span>
-							<a
+							{/* <a
 								href="#"
 								className="featured-store-link text-capitalize"
 								>add to cart</a
-							>
+							> */}
 						</div>
 						<h6 className="text-capitalize text-center my-2">
 							special product
@@ -85,11 +85,11 @@ const FeaturedProducts = () => {
 								data-toggle="modal"
 								data-target="#productModal"
 								><FontAwesomeIcon icon="search" /></span>
-							<a
+							{/* <a
 								href="#"
 								className="featured-store-link text-capitalize"
 								>add to cart</a
-							>
+							> */}
 						</div>
 						<h6 className="text-capitalize text-center my-2">
 							special product
@@ -111,11 +111,11 @@ const FeaturedProducts = () => {
 								data-toggle="modal"
 								data-target="#productModal"
 								><FontAwesomeIcon icon="search" /></span>
-							<a
+							{/* <a
 								href="#"
 								className="featured-store-link text-capitalize"
 								>add to cart</a
-							>
+							> */}
 						</div>
 						<h6 className="text-capitalize text-center my-2">
 							special product
@@ -137,11 +137,11 @@ const FeaturedProducts = () => {
 								data-toggle="modal"
 								data-target="#productModal"
 								><FontAwesomeIcon icon="search" /></span>
-							<a
+							{/* <a
 								href="#"
 								className="featured-store-link text-capitalize"
 								>add to cart</a
-							>
+							> */}
 						</div>
 						<h6 className="text-capitalize text-center my-2">
 							special product
@@ -163,11 +163,11 @@ const FeaturedProducts = () => {
 								data-toggle="modal"
 								data-target="#productModal"
 								><FontAwesomeIcon icon="search" /></span>
-							<a
+							{/* <a
 								href="#"
 								className="featured-store-link text-capitalize"
 								>add to cart</a
-							>
+							> */}
 						</div>
 						<h6 className="text-capitalize text-center my-2">
 							special product

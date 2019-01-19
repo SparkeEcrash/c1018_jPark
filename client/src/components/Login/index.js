@@ -1,11 +1,12 @@
-import React from 'react'
+import React from 'react';
+import LoginBanner from './LoginBanner';
 
-function index() {
+const Login = () => {
   return (
     <div>
-      Login
+      <LoginBanner></LoginBanner>
     </div>
   )
 }
 
-export default index
+export default Login;

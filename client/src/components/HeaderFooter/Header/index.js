@@ -3,6 +3,7 @@ import './header.css';
 import { Link, withRouter } from 'react-router-dom';
 
 import {connect} from 'react-redux';
+import {logoutUser} from '../../../actions/user_actions';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -15,6 +16,11 @@ class Header extends Component {
         public: true
       },
       {
+        name:'Account',
+        linkTo: '/user/dashboard',
+        public: false
+      },
+      {
         name: 'Amiibos',
         linkTo: '/store',
         public: true
@@ -22,7 +28,7 @@ class Header extends Component {
       {
         name: 'Checkout',
         linkTo: '/checkout',
-        public: true
+        public: false
       }
     ],
     user: [
@@ -33,13 +39,18 @@ class Header extends Component {
       },
       {
         name: 'Log Out',
+        linkTo: '/',
         public: false
       }
     ]
   }
 
   logOutHandler = () => {
-    console.log('logged out');
+    this.props.dispatch(logoutUser()).then(response => {
+      if(response.success){
+        this.props.history.push('/');
+      }
+    })
   }
 
   defaultLinkPage = (item, i) => (
@@ -51,14 +62,8 @@ class Header extends Component {
   )
 
   defaultLinkUser = (item, i) => (
-    item.name === 'Log out'
-    ?
-    <li className="nav-item mx-2">
-      {item.name}
-    </li>
-    :
-    <li className="nav-item mx-2" key={'asdf'}>
-      <Link to={item.linkTo} className="nav-link">
+    <li className="nav-item mx-2" key={i} onClick={item.name === 'Log Out' ? this.logOutHandler : null}>
+      <Link to={item.linkTo} className="nav-link">      
         {item.name}
       </Link>
     </li>
@@ -66,11 +71,20 @@ class Header extends Component {
 
   showLinks = (type, position) => {
     let list = [];
-    type.forEach((item)=> {
-      if(item.public){
-        list.push(item)
-      }
-    })
+    if(this.props.user.userData){
+      type.forEach((item)=> {
+        if(!this.props.user.userData.isAuth){
+          if(item.public){
+            list.push(item)
+          } 
+        } else {
+          // if((item.name !== 'Log In') && (item.name !== 'Home')){
+          if(item.name !== 'Log In'){
+            list.push(item)
+          }
+        }
+      });
+    }
 
     return list.map((item, i) => (
       position === 'page' 
@@ -82,11 +96,8 @@ class Header extends Component {
     ) 
   }
 
-//   <div className="navbar-icon mx-2">
-//   <FontAwesomeIcon icon="search" />
-// </div>
-
   render() {
+    console.log(this.props)
     return (
       <header>
       <nav className="navbar navbar-expand-md navbar-light">
@@ -115,4 +126,10 @@ class Header extends Component {
   }
 }
 
-export default connect()(withRouter(Header));
+function mapStateToProps(state) {
+  return {
+    user: state.user
+  }
+}
+
+export default connect(mapStateToProps)(withRouter(Header));

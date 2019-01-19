@@ -12,7 +12,7 @@ class StoreCatalog extends Component {
               <h6 className="text-uppercase">shop by categories</h6>
               <div className="products-categories-underline"></div>
             </div>
-            <a href="#" className="d-block products-categories-link">
+            {/* <a href="#" className="d-block products-categories-link">
               <p className="mb-0">kitchen</p>
             </a>
             <a href="#" className="d-block products-categories-link">
@@ -27,7 +27,7 @@ class StoreCatalog extends Component {
           
             <a href="#" className="d-block products-categories-link">
               <p className="mb-0">patio</p>
-            </a>
+            </a> */}
             <div className="products-categories-title my-4">
               <h6 className="text-uppercase">shop by price</h6>
               <div className="products-categories-underline"></div>
@@ -50,7 +50,7 @@ class StoreCatalog extends Component {
               <h6 className="text-uppercase">shop by color</h6>
               <div className="products-categories-underline"></div>
             </div>
-          <a href="#">
+          {/* <a href="#">
             <p className="text-capitalize mb-0">
               <span className="d-inline-block products-color products-color-black mr-2"></span>
               black (5)
@@ -79,7 +79,7 @@ class StoreCatalog extends Component {
               <span className="d-inline-block products-color products-color-green mr-2"></span>
               green (5)
             </p>
-          </a>
+          </a> */}
           </div>
 
           <div className="col-10 col-md-7 col-lg-9 mx-auto my-3">
@@ -90,7 +90,7 @@ class StoreCatalog extends Component {
                   <span className="featured-search-icon" data-toggle="modal" data-target="#productModal">
                     <FontAwesomeIcon icon="search" />
                   </span>
-                  <a href="#" className="featured-store-link text-capitalize">add to cart</a>
+                  {/* <a href="#" className="featured-store-link text-capitalize">add to cart</a> */}
                 </div>
                 <h6 className="text-capitalize text-center my-2">
                   special product
@@ -106,7 +106,7 @@ class StoreCatalog extends Component {
                   <span className="featured-search-icon" data-toggle="modal" data-target="#productModal">
                     <FontAwesomeIcon icon="search" />
                   </span>
-                  <a href="#" className="featured-store-link text-capitalize">add to cart</a>
+                  {/* <a href="#" className="featured-store-link text-capitalize">add to cart</a> */}
                 </div>
                 <h6 className="text-capitalize text-center my-2">
                   special product
@@ -122,7 +122,7 @@ class StoreCatalog extends Component {
                   <span className="featured-search-icon" data-toggle="modal" data-target="#productModal">
                     <FontAwesomeIcon icon="search" />
                   </span>
-                  <a href="#" className="featured-store-link text-capitalize">add to cart</a>
+                  {/* <a href="#" className="featured-store-link text-capitalize">add to cart</a> */}
                 </div>
                 <h6 className="text-capitalize text-center my-2">
                   special product
@@ -138,7 +138,7 @@ class StoreCatalog extends Component {
                   <span className="featured-search-icon" data-toggle="modal" data-target="#productModal">
                     <FontAwesomeIcon icon="search" />
                   </span>
-                  <a href="#" className="featured-store-link text-capitalize">add to cart</a>
+                  {/* <a href="#" className="featured-store-link text-capitalize">add to cart</a> */}
                 </div>
                 <h6 className="text-capitalize text-center my-2">
                   special product
@@ -154,7 +154,7 @@ class StoreCatalog extends Component {
                   <span className="featured-search-icon" data-toggle="modal" data-target="#productModal">
                     <FontAwesomeIcon icon="search" />
                   </span>
-                  <a href="#" className="featured-store-link text-capitalize">add to cart</a>
+                  {/* <a href="#" className="featured-store-link text-capitalize">add to cart</a> */}
                 </div>
                 <h6 className="text-capitalize text-center my-2">
                   special product
@@ -170,7 +170,7 @@ class StoreCatalog extends Component {
                   <span className="featured-search-icon" data-toggle="modal" data-target="#productModal">
                     <FontAwesomeIcon icon="search" />
                   </span>
-                  <a href="#" className="featured-store-link text-capitalize">add to cart</a>
+                  {/* <a href="#" className="featured-store-link text-capitalize">add to cart</a> */}
                 </div>
                 <h6 className="text-capitalize text-center my-2">
                   special product
