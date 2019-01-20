@@ -58,4 +58,21 @@ router.get('/api/user/logout', auth, (req, res) => {
   )
 })
 
+router.post('/api/user/update_profile', auth, (req, res)=>{
+  //req.user is from auth.js
+  User.findOneAndUpdate(
+    { _id: req.user._id },
+    {
+      "$set": req.body
+    },
+    { new: true },
+    (err, doc) => {
+      if(err) return res.json({success: false, err});
+      return res.status(200).send({
+        success: true 
+      })
+    }
+  )
+})
+
 module.exports = router;

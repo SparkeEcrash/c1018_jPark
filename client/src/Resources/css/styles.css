@@ -1,4 +1,24 @@
-@import url("https://fonts.googleapis.com/css?family=Calligraffitti|Mali");
+@import url('https://fonts.googleapis.com/css?family=Capriola|Caveat+Brush|Fredoka+One|Gochi+Hand|Knewave');
+
+:root {
+  --mainYellow: #fdbe02;
+  --mainWhite: #fff;
+  --mainBlack: #071013;
+  --mainGrey: #9b9999;
+  --TransGrey: rgba(0, 0, 0, 0.1);
+}
+
+html {
+  font-size: 90%;
+  min-height: 100%;
+}
+
+body {
+  color: var(--mainBlack);
+  background: var(--mainWhite);
+  font-family: "Capriola", cursive !important;
+}
+
 /* GENERAL STYLES */
 :root {
   --mainYellow: #fdbe02;

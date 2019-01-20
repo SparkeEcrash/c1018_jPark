@@ -2,7 +2,9 @@ import {
   REGISTER_USER,
   LOGIN_USER,
   AUTH_USER,
-  LOGOUT_USER
+  LOGOUT_USER,
+  UPDATE_USER_DATA,
+  CLEAR_UPDATE_USER_DATA
 } from '../actions/types';
 
 export default function(state={}, action) {
@@ -15,6 +17,10 @@ export default function(state={}, action) {
       return {...state, userData: action.payload}
     case LOGOUT_USER:
       return {...state}
+    case UPDATE_USER_DATA:
+      return {...state,updateUser: action.payload}
+    case CLEAR_UPDATE_USER_DATA:
+      return {...state,updateUser: action.payload}
     default:
       return state;
   }

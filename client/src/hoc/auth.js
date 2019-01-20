@@ -34,7 +34,7 @@ export default function(ComposedClass, reload, adminRoute = null) {
 
     render(){
       return(
-        <ComposedClass/>
+        <ComposedClass user={this.props.user}/>
       );
     }
   }

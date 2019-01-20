@@ -17,5 +17,5 @@ html {
 body {
   color: var(--mainBlack);
   background: var(--mainWhite);
-  font-family: "Capriola", cursive;
+  font-family: "Capriola", cursive !important;
 }
