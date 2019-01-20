@@ -13,11 +13,17 @@ export class UserDashboard extends Component {
     display: 'default'
   }
 
+  // updateDisplay = display => {
+  //   this.setState({
+  //     display: display
+  //   }, ()=>console.log(this.state)
+  //   )
+  // }
+
   updateDisplay = display => {
     this.setState({
       display: display
-    }, ()=>console.log(this.state)
-    )
+    })
   }
 
   render() {

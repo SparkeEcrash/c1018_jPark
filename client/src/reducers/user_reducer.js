@@ -18,7 +18,7 @@ export default function(state={}, action) {
     case LOGOUT_USER:
       return {...state}
     case UPDATE_USER_DATA:
-      return {...state,updateUser: action.payload}
+      return {...state, userData: {...state.userData, ...action.payload.data}, updateUser: action.payload.response}
     case CLEAR_UPDATE_USER_DATA:
       return {...state,updateUser: action.payload}
     default:

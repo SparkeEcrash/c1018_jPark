@@ -69,7 +69,8 @@ router.post('/api/user/update_profile', auth, (req, res)=>{
     (err, doc) => {
       if(err) return res.json({success: false, err});
       return res.status(200).send({
-        success: true 
+        response: {success: true},
+        data: req.body
       })
     }
   )

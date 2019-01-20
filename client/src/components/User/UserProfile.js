@@ -9,6 +9,8 @@ function UserProfile({user}) {
       <p className="list-group-item">Name: {user.userData.name} {user.userData.lastname}</p>
       <p className="list-group-item">Email: {user.userData.email}</p>
       <p className="list-group-item">Role: {user.userData.isAdmin ? 'Admin' : 'User'}</p>
+      <p className="list-group-item">Test: {user.updateUser}</p>
+      
     </div>
     :null}
   </Fragment>

@@ -3,6 +3,7 @@ import FormField from '../utils/Form/formfield';
 
 import { connect } from 'react-redux';
 import { updateUserData, clearUpdateUser } from '../../actions/user_actions';
+import Dialog from '@material-ui/core/Dialog';
 import { update, generateData, isFormValid, populateFields } from '../utils/Form/formActions';
 
 export class UserProfileInformation extends Component {
@@ -84,15 +85,16 @@ export class UserProfileInformation extends Component {
     if(formIsValid) {
       this.props.dispatch(updateUserData(dataToSubmit)).then(()=>{
         if(this.props.user.updateUser.success){
+          this.props.dispatch(clearUpdateUser());
           this.setState({
             formSuccess: true
           }, () => {
             setTimeout(()=>{
-              this.props.dispatch(clearUpdateUser());
-              this.props.update('default');
               this.setState({
                 formSuccess: false
-              })
+              });
+              console.log('hello');
+              this.props.update('default');
             }, 2000)
           })
         }
@@ -134,12 +136,26 @@ export class UserProfileInformation extends Component {
                   Please check your data
                 </div>
                 : null}
+              { this.state.formSuccess ?
+                <div className="form_success">
+                  Your account was updated
+                </div>
+                :null
+            }
               <button className="btn btn-large text-uppercase contact-btn col-10 col-md-5" onClick={(event)=>this.submitForm(event)}>
                 Update
               </button>
             </div>
           </form>
         </div>
+        <Dialog open={this.state.formSuccess}>
+          <div className="dialog_alert text-center">
+            <h1>Account Updated</h1>
+            <h3>
+              Your information is up to date
+            </h3>
+          </div>
+        </Dialog>
       </div>
     )
   }
