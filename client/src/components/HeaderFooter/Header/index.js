@@ -97,7 +97,6 @@ class Header extends Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <header>
       <nav className="navbar navbar-expand-md navbar-light">

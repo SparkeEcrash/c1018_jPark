@@ -3,7 +3,9 @@ import {
   REGISTER_USER,
   LOGIN_USER,
   AUTH_USER,
-  LOGOUT_USER
+  LOGOUT_USER,
+  UPDATE_USER_DATA,
+  CLEAR_UPDATE_USER_DATA
 } from './types';
 
 import { USER_SERVER } from '../components/utils/misc';
@@ -45,4 +47,23 @@ export function logoutUser() {
       type: LOGOUT_USER,
       payload: request
     }
+}
+
+export function updateUserData(data) {
+  const request = axios.post(`${USER_SERVER}/update_profile`, data)
+    .then(response => {
+      return response.data
+    });
+
+  return {
+    type: UPDATE_USER_DATA,
+    payload: request
+  }
+} 
+
+export function clearUpdateUser(){
+  return {
+    type: CLEAR_UPDATE_USER_DATA,
+    payload: ''
+  }
 }
