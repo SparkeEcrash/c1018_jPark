@@ -32,7 +32,6 @@ const admin = [
 
 function UserSideNav({user, update}) {
 
-  console.log(user)
   const generateLinks = (links) => (
     links.map((item, i) => (
       <div className="list-group-item text-capitalize" onClick={()=>update(item.display)} key={i}>
