@@ -28,8 +28,10 @@ app.use(cors());
 
 // Routes
 const userRoutes = require('./routes/user');
+const productsRoute = require('./routes/product');
 
 app.use(userRoutes);
+app.use(productsRoute);
 
 app.listen(PORT, () => {
   console.log('Server running @ localhost:' + PORT);

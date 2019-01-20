@@ -10,7 +10,8 @@ import SingleProduct from './components/SingleProduct';
 import Store from './components/Store';
 import Login from './components/Login';
 import Register from './components/Register';
-import UserDashboard from './components/User';
+
+import UserDashboard from './components/User/UserDashboard';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
@@ -32,7 +33,10 @@ import {
   faUsers,
   faKey,
   faLock,
-  faHandPointRight
+  faHandPointRight,
+  faAngleDown,
+  faAngleUp
+
 } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
@@ -58,6 +62,9 @@ library.add(
   faKey,
   faLock,
   faHandPointRight,
+  faAngleDown,
+  faAngleUp,
+
   fab
 );
 
