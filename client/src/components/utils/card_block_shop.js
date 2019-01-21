@@ -1,6 +1,8 @@
 import React from 'react';
 import Card from '../utils/card';
 
+import './card_block_shop.css';
+
 export default function CardBlockShop(props) {
   const renderCards = () => (
     props.list ? 
@@ -15,12 +17,12 @@ export default function CardBlockShop(props) {
 )
 
   return (
-    <div className="card_block_shop">
+    <div className="card_block_shop mt-3">
       <div>
         <div className="row">
           {props.list ?
             props.list.length === 0 ?
-              <div className="no_result">
+              <div className="no_result mx-auto">
                 Sorry, no results
               </div>
               : null

@@ -1,7 +1,9 @@
 import {
   GET_PRODUCTS_TO_SHOP,
   GET_SERIES,
-  GET_WAVES
+  GET_WAVES,
+  GET_PRODUCT_DETAIL,
+  CLEAR_PRODUCT_DETAIL
 } from '../actions/types';
 
 export default function(state={}, action) {
@@ -15,6 +17,10 @@ export default function(state={}, action) {
       return {...state, series: action.payload}
     case GET_WAVES:
       return {...state, waves: action.payload}
+    case GET_PRODUCT_DETAIL:
+      return {...state, prodDetail: action.payload}
+    case CLEAR_PRODUCT_DETAIL:
+      return {...state, prodDetail: action.payload}
     default:
       return state;
   }

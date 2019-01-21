@@ -74,7 +74,7 @@ const Routes = () => {
       <Switch>
         <Route path="/" exact component={Auth(Home, null)} />
         <Route path="/checkout" exact component={Auth(Checkout, true)} />
-        <Route path="/single_product" exact component={Auth(SingleProduct, null)} />
+        <Route path="/product_detail/:id" exact component={Auth(SingleProduct, true)} />
         <Route path="/store" exact component={Auth(Store, null)} /> 
 
         <Route path="/login" exact component={Auth(Login, false)} /> 
