@@ -9,7 +9,7 @@
 
 .card_item_wrapper .image {
   width: 100%;
-  height: 360px;
+  height: 50vh;
   background-position: center !important;
   background-size: cover !important;
   border: 1px solid #f0f0f0;
@@ -36,4 +36,39 @@
 .card_item_wrapper .tags .price {
   font-weight: 300;
   font-size: 15px;
+  color: rgb(33, 142, 243)
+}
+
+.card_link,
+.bag_link,
+.add_to_cart_link {
+    width: 100%;
+    border: 1px solid #ffa702;
+    padding: 5px 10px;
+    display: block;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #ffa702;
+    background: white;
+    transition: all 200ms ease-in;
+    cursor: pointer;
+}
+.card_link:hover,
+.bag_link:hover,
+.add_to_cart_link:hover {
+    background: #ffa702;
+    color: white;
+    text-decoration: none;
+}
+
+.card_item_wrapper .actions {
+  display: flex;
+  margin: 0 0 10px 0;
+}
+
+.card_item_wrapper .actions .button_wrap:nth-child(1) {
+  flex-grow: 1;
+  padding-right: 10px;
 }

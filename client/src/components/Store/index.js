@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import TopBorder from './TopBorder';
 import {price} from '../utils/Form/fixed_categories';
 
-import StoreCatalog from './StoreCatalog';
-
 import {connect} from 'react-redux';
 import { getProductsToShop, getSeries, getWaves } from '../../actions/products_actions';
 
@@ -11,20 +9,10 @@ import CollapseCheckbox from '../utils/collapseCheckBox';
 import CollapseRadio from '../utils/collapseRadio';
 
 import LoadmoreCards from './loadmoreCards';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import faBars from '@fortawesome/fontawesome-free-solid/faBars';
-import faTh from '@fortawesome/fontawesome-free-solid/faTh';
-
-// import StoreBanner from './StoreBanner';
-// import StoreCatalog from './StoreCatalog';
-// import FeaturedProducts from '../Shared/FeaturedProducts';
-// import NewsLetter from '../Shared/NewsLetter';
-// import Skills from '../Shared/Skills';
 
 export class Shop extends Component {
 
   state = {
-    grid: '',
     limit: 6,
     skip: 0,
     filters: {
@@ -97,12 +85,6 @@ export class Shop extends Component {
     })
   }
 
-  handleGrid = () => {
-    this.setState({
-      grid: !this.state.grid ? 'grid_bars':''
-    })
-  }
-
   render() {
     const products = this.props.products;
     return (
@@ -131,16 +113,6 @@ export class Shop extends Component {
               ></CollapseRadio>
             </div>
             <div className="col-12 col-md-9 order-md-2 order-1 d-flex flex-column">
-              <div className="shop_options">
-                <div className="shop_grids">
-                  <div className={`grid_btn ${this.state.grid ? '': 'active'}`} onClick={()=>this.handleGrid()}>
-                    <FontAwesomeIcon icon={faTh}/>
-                  </div>
-                  <div className={`grid_btn ${!this.state.grid?'':'active'}`} onClick={()=>this.handleGrid()}>
-                    <FontAwesomeIcon icon={faBars}/>
-                  </div>
-                </div>
-              </div>
               <div>
                 <LoadmoreCards
                   grid={this.state.grid}
@@ -154,10 +126,6 @@ export class Shop extends Component {
           </div>
         </div>
       </div>
-        // <StoreCatalog></StoreCatalog>
-        // {/* <FeaturedProducts></FeaturedProducts> */}
-        // {/* <NewsLetter></NewsLetter> */}
-        // {/* <Skills></Skills> */}
     )
   }
 }

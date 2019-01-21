@@ -1,6 +1,8 @@
 import React from 'react';
 import CardBlockShop from '../utils/card_block_shop';
 
+import './loadmoreCards.css';
+
 export default function LoadmoreCards(props) {
   if(props.products !== null) {
     return (
@@ -13,7 +15,7 @@ export default function LoadmoreCards(props) {
         </div>
         {
           props.size > 0 && props.size >= props.limit ?
-          <div className="load_more_container">
+          <div className="load_more_container mt-4 mb-5">
             <span onClick={() => props.loadMore()}>
               Load More
             </span>

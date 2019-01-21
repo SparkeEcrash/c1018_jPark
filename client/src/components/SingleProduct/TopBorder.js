@@ -3,7 +3,7 @@ import './TopBorder.css';
 
 function TopBorder(props) {
   return (
-    <div className="store_page_top mx-auto">
+    <div className="product_page_top mx-auto">
       <div className="browse_title text-center text-sm-left ml-sm-3">{props.title}</div>
     </div>
   )

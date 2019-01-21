@@ -35,13 +35,6 @@ class Card extends Component {
               ${props.price}
             </div>
           </div>
-          {props.grid ?
-            <div className="description">
-              <p>
-                {props.description}
-              </p>
-            </div>
-          :null}
           <div className="actions">
             <div className="button_wrap">
               <MyButton
@@ -50,20 +43,20 @@ class Card extends Component {
                 title="View product"
                 linkTo={`/product_detail/${props._id}`}
                 addStyles={{
-                  margin: '10px 0 0 0'
+                  margin: '0 0 0 0'
                 }}
               />
             </div>
             <div className="button_wrap">
-                {/* <MyButton
-                  type="bag_link"
-                  runAction={()=> {
-                    props.user.userData.isAuth ?
-                    this.props.dispatch(addToCart(props._id))
-                    :
-                    console.log('you need to log in')
-                  }}
-                /> */}
+              <MyButton
+                type="bag_link"
+                // runAction={()=> {
+                //   props.user.userData.isAuth ?
+                //   this.props.dispatch(addToCart(props._id))
+                //   :
+                //   console.log('you need to log in')
+                // }}
+              />
             </div>
           </div>
         </div>
