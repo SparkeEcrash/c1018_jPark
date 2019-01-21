@@ -13,9 +13,7 @@ export default function(ComposedClass, reload, adminRoute = null) {
 
     componentDidMount = () => {
       this.props.dispatch(auth()).then(response => {
-        console.log(this.props)
         let user = this.props.user.userData;
-        console.log('HERE', user)
         if(!user.isAuth){
           //Authentication fails
           if(reload) {
@@ -38,8 +36,8 @@ export default function(ComposedClass, reload, adminRoute = null) {
   render() { 
     if(this.state.loading) {
       return (
-        <div className="main_loader">
-          <CircularProgress style={{color:'#2196F3'}} thickness={7}/>
+        <div className="main_loader d-flex flex-column justify-content-center">
+          <CircularProgress className="mx-auto spin" style={{color:'#2196F3'}} thickness={8}/>
         </div>
       )
     }

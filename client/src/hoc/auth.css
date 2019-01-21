@@ -1,4 +1,13 @@
 .main_loader {
   text-align: center;
-  margin-top: 100px;
+  min-height: calc(100vh - 73.35px);
+  background-color: white; 
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+.spin{
+  margin-bottom: 73.35px;
 }
