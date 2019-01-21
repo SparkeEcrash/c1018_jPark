@@ -9,6 +9,7 @@ import Routes from './routes';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import think from './middleware/think';
+// import promiseMiddleware from 'redux-promise';
 import ourPromise from './middleware/promise';
 import logger from './middleware/logger';
 // import ReduxThunk from 'redux-thunk';

@@ -63,6 +63,10 @@
     text-decoration: none;
 }
 
+.add_to_cart_link svg {
+  margin-right: 10px;
+}
+
 .card_item_wrapper .actions {
   display: flex;
   margin: 0 0 10px 0;
