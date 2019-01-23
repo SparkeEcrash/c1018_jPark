@@ -1,7 +1,6 @@
 const PORT = process.env.PORT || 9000;
 const express = require('express');
 const cookieParser = require('cookie-parser');
-const formidable = require('express-formidable');
 const cors = require('cors');
 
 const app = express();

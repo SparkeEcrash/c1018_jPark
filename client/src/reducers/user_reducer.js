@@ -4,7 +4,8 @@ import {
   AUTH_USER,
   LOGOUT_USER,
   UPDATE_USER_DATA,
-  CLEAR_UPDATE_USER_DATA
+  CLEAR_UPDATE_USER_DATA,
+  ADD_TO_USER_CART
 } from '../actions/types';
 
 export default function(state={}, action) {
@@ -20,7 +21,12 @@ export default function(state={}, action) {
     case UPDATE_USER_DATA:
       return {...state, userData: {...state.userData, ...action.payload.data}, updateUser: action.payload.response}
     case CLEAR_UPDATE_USER_DATA:
-      return {...state,updateUser: action.payload}
+      return {...state, updateUser: action.payload}
+    case ADD_TO_USER_CART: 
+      return {...state, userData: {
+        ...state.userData,
+        cart: action.payload
+      }}
     default:
       return state;
   }

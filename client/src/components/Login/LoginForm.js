@@ -96,8 +96,8 @@ export class LoginForm extends Component {
       <div className="login container">
         <div className="row">
           <div className="col-10 col-lg-6 mx-auto">
-            <div className="card text-center">
-              <div className="card-header text-uppercase">
+            <div className="card">
+              <div className="card-header text-center text-uppercase">
                 <h3 className="text-uppercase mt-2">Registered Members</h3>
               </div>
               <div className="card-body">

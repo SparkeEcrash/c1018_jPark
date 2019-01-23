@@ -11,7 +11,8 @@
   width: 100%;
   height: 50vh;
   background-position: center !important;
-  background-size: cover !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
   border: 1px solid #f0f0f0;
 }
 
@@ -41,7 +42,8 @@
 
 .card_link,
 .bag_link,
-.add_to_cart_link {
+.add_to_cart_link,
+.add_amiibo_link {
     width: 100%;
     border: 1px solid #ffa702;
     padding: 5px 10px;
@@ -57,7 +59,8 @@
 }
 .card_link:hover,
 .bag_link:hover,
-.add_to_cart_link:hover {
+.add_to_cart_link:hover,
+.add_amiibo_link:hover {
     background: #ffa702;
     color: white;
     text-decoration: none;

@@ -3,6 +3,7 @@ import ProdInfo from './prodinfo';
 import ProdImg from './prodimg';
 
 import { connect } from 'react-redux';
+import { addToCart } from '../../actions/user_actions';
 import { getProductDetail, clearProductDetail } from '../../actions/products_actions';
 
 import './SingleProduct.css';
@@ -16,14 +17,18 @@ export class SingleProduct extends Component {
         this.props.history.push('/store')
       }
     });
+    window.scrollTo(0, 0);
   }
 
   componentWillUnmount() {
     this.props.dispatch(clearProductDetail());
   }
 
+  addToCartHandler(id) {
+    this.props.dispatch(addToCart(id))
+  }
+
   render() {
-    console.log(this.props);
     return (
       <div className="single-product-background d-flex flex-column justify-content-center">
         {/* <TopBorder title='Amiibo Detail'></TopBorder> */}
@@ -31,13 +36,14 @@ export class SingleProduct extends Component {
         {
           this.props.products.prodDetail ?
           <div className="row">
-            <div className="col-6">
+            <div className="col-6 d-flex flex-column justify-content-center">
               <ProdImg detail={this.props.products.prodDetail}></ProdImg>
 
             </div>
-            <div className="col-6">
+            <div className="col-6 d-flex flex-column justify-content-center">
               <ProdInfo
-                  detail={this.props.products.prodDetail}
+                detail={this.props.products.prodDetail}
+                addToCart={(id)=>this.addToCartHandler(id)}
               />
             </div>
           </div>

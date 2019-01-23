@@ -37,18 +37,19 @@ export class ProdImg extends Component {
     })
   }
 
-  showThumbs = () => {
+  showThumbs = () => (
     this.state.lightboxImages.map((item,i) => (
-      i > 0 ?
-      <div
-        key={i}
-        onClick={()=> this.handleLightBox(i)}
-        className="thumb"
-        style={{background: `url(${item}) no-repeat`}}>
+      i > 0 && i < 3 ?
+      <div className="thumb_container" key={i}>
+        <img className="thumb" 
+          alt="additional amiibo pics" 
+          src={`${item}`}
+          onClick={()=> this.handleLightBox(i)}>
+        </img>
       </div>
       :null
     ))
-  }
+  )
 
   renderCardImage = (images) => {
     if(images.length > 0) {
@@ -59,9 +60,7 @@ export class ProdImg extends Component {
   }
 
   render() {
-    console.log(this.props.detail)
     const {detail} = this.props;
-    console.log(detail.images);
     return (
       <div className="product_image_container">
         <div className="main_pic">
@@ -72,7 +71,7 @@ export class ProdImg extends Component {
           </div>
         </div>
         <div className="main_thumbs">
-          {/* {this.showThumbs(detail)} */}
+          {this.showThumbs(detail)}
         </div>
         {
           this.state.lightbox ?

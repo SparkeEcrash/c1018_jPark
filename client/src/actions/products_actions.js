@@ -4,7 +4,9 @@ import {
   GET_SERIES,
   GET_WAVES,
   GET_PRODUCT_DETAIL,
-  CLEAR_PRODUCT_DETAIL
+  CLEAR_PRODUCT_DETAIL,
+  ADD_PRODUCT,
+  CLEAR_PRODUCT
 } from './types';
 
 import { PRODUCT_SERVER } from '../components/utils/misc';
@@ -70,4 +72,21 @@ export function getWaves() {
       type: GET_WAVES,
       payload: request
     }
+}
+
+export function addProduct(datatoSubmit){
+  const request = axios.post(`${PRODUCT_SERVER}/article`, datatoSubmit)
+    .then(response => response.data);
+
+    return {
+      type: ADD_PRODUCT,
+      payload: request
+    }
+}
+
+export function clearProduct() {
+  return {
+    type: CLEAR_PRODUCT,
+    payload: ''
+  }
 }

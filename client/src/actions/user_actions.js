@@ -5,7 +5,8 @@ import {
   AUTH_USER,
   LOGOUT_USER,
   UPDATE_USER_DATA,
-  CLEAR_UPDATE_USER_DATA
+  CLEAR_UPDATE_USER_DATA,
+  ADD_TO_USER_CART
 } from './types';
 
 import { USER_SERVER } from '../components/utils/misc';
@@ -65,5 +66,14 @@ export function clearUpdateUser(){
   return {
     type: CLEAR_UPDATE_USER_DATA,
     payload: ''
+  }
+}
+
+export function addToCart(_id) {
+  const request = axios.post( `${USER_SERVER}/addToCart?productId=${_id}`)
+    .then(response => response.data)
+  return {
+    type: ADD_TO_USER_CART,
+    payload: request
   }
 }
