@@ -95,13 +95,13 @@ export class Shop extends Component {
           <div className="row">
             <div className="col-12 col-md-3 col-xl-2 order-md-1 order-2">
               <CollapseCheckbox
-                initState={true}
+                initState={false}
                 title="Series"
                 list={products.series}
                 handleFiltersProp = {(filters)=>this.handleFilters(filters,'series')}
               ></CollapseCheckbox>
               <CollapseCheckbox
-                initState={false}
+                initState={true}
                 title="Waves"
                 list={products.waves}
                 handleFiltersProp={(filters)=>this.handleFilters(filters,'wave')}

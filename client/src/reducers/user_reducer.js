@@ -5,7 +5,11 @@ import {
   LOGOUT_USER,
   UPDATE_USER_DATA,
   CLEAR_UPDATE_USER_DATA,
-  ADD_TO_USER_CART
+  ADD_TO_USER_CART,
+  GET_CART_USER_ITEMS,
+  REMOVE_CART_USER_ITEM,
+  ON_SUCCESS_USER_BUY
+
 } from '../actions/types';
 
 export default function(state={}, action) {
@@ -27,6 +31,27 @@ export default function(state={}, action) {
         ...state.userData,
         cart: action.payload
       }}
+    case GET_CART_USER_ITEMS:
+      return {...state, cartDetail: action.payload }
+    case REMOVE_CART_USER_ITEM:
+      return {
+        ...state,
+        cartDetail: action.payload.cartDetail,
+        userData: {
+          ...state.userData, 
+          cart: action.payload.cart
+        }
+      }
+    case ON_SUCCESS_USER_BUY:
+      return {
+        ...state,
+        successBuy: action.payload.success,
+        userData: {
+          ...state.userData,
+          cart: action.payload.cart
+        },
+        cartDetail: action.payload.cartDetail
+      }
     default:
       return state;
   }
