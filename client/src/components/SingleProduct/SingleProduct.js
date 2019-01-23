@@ -3,6 +3,7 @@ import ProdInfo from './prodinfo';
 import ProdImg from './prodimg';
 
 import { connect } from 'react-redux';
+import { addToCart } from '../../actions/user_actions';
 import { getProductDetail, clearProductDetail } from '../../actions/products_actions';
 
 import './SingleProduct.css';
@@ -23,6 +24,10 @@ export class SingleProduct extends Component {
     this.props.dispatch(clearProductDetail());
   }
 
+  addToCartHandler(id) {
+    this.props.dispatch(addToCart(id))
+  }
+
   render() {
     return (
       <div className="single-product-background d-flex flex-column justify-content-center">
@@ -37,7 +42,8 @@ export class SingleProduct extends Component {
             </div>
             <div className="col-6 d-flex flex-column justify-content-center">
               <ProdInfo
-                  detail={this.props.products.prodDetail}
+                detail={this.props.products.prodDetail}
+                addToCart={(id)=>this.addToCartHandler(id)}
               />
             </div>
           </div>

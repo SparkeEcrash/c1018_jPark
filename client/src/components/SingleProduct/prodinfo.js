@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from 'react-redux';
 import MyButton from "../utils/button";
 import './prodinfo.css';
 
@@ -44,17 +45,12 @@ function ProdInfo(props) {
   )
 
   const showProdActions = (detail) => (
-    <div className="product_actions">
-      <div className="price">$ { detail.price }</div>
-      {/* <div className="cart">
         <MyButton
           type="add_to_cart_link"
           runAction={()=>{
             props.addToCart(detail._id)
           }}
         />
-      </div> */}
-    </div>
   )
 
   const showProdCost = (detail) => (
@@ -70,7 +66,7 @@ function ProdInfo(props) {
   )
 
   const detail = props.detail;
-  console.log(detail);
+  const user = props.user.userData;
   return (
     <div className="card text-center prod_info">
       <div className="card-body">
@@ -82,12 +78,18 @@ function ProdInfo(props) {
         <li className="list-group-item">{ showProdCost(detail) }</li>
         <li className="list-group-item">{ showProdSeries(detail) } </li>
         <li className="list-group-item">{ showProdWave(detail) } </li>
-        <li className="list-group-item">        <MyButton
-          type="add_to_cart_link"
-        /> </li>
+        {user.isAuth ? 
+        <li className="list-group-item">        
+          {showProdActions(detail)}
+        </li>
+        :null}
       </ul>
     </div>
     )
 }
 
-export default ProdInfo;
+function mapStateToProps(state) {
+  return { user: state.user }
+} 
+
+export default connect(mapStateToProps)(ProdInfo);

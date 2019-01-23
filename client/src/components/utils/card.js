@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 
 import { connect } from 'react-redux';
 import './card.css';
-// import { addToCart } from '../../actions/user_actions';
+import { addToCart } from '../../actions/user_actions';
 
 class Card extends Component {
 
@@ -18,6 +18,7 @@ class Card extends Component {
 
   render() {
     const props = this.props; 
+    let user = props.user.userData;
     return (
       <div className={`card_item_wrapper col-12 col-md-4 ${props.grid}`}>
         <div className="image" style={{
@@ -27,16 +28,6 @@ class Card extends Component {
         }}
         onClick={()=> {this.props.history.push(`/product_detail/${props._id}`)}}
         >
-{/* 
-.login-banner {
-  min-height: calc(100vh - 73.35px);
-  background: url('/img/background_two.jpg');
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-} */}
-
         </div>
         <div className="action_container">
           <div className="tags">
@@ -62,16 +53,16 @@ class Card extends Component {
                 }}
               />
             </div>
+            {user.isAuth ? 
+            <MyButton
+            type="bag_link"
+            runAction={()=> {
+              this.props.dispatch(addToCart(props._id))
+            }}
+            />
+            : null}
             <div className="button_wrap">
-              <MyButton
-                type="bag_link"
-                // runAction={()=> {
-                //   props.user.userData.isAuth ?
-                //   this.props.dispatch(addToCart(props._id))
-                //   :
-                //   console.log('you need to log in')
-                // }}
-              />
+
             </div>
           </div>
         </div>

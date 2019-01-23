@@ -11,7 +11,7 @@ import AdminAddProducts from './AdminAddProducts';
 
 export class UserDashboard extends Component {
   state = {
-    display: 'add_products'
+    display: 'default'
   }
 
   // updateDisplay = display => {
