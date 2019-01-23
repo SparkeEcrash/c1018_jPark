@@ -9,6 +9,11 @@ const { Wave } = require('./../models/wave');
 const { auth } = require('./../middleware/auth');
 const { admin } = require('./../middleware/admin');
 
+const mongoose = require('mongoose');
+mongoose.Promise = global.Promise;
+mongoose.connect(process.env.DATABASE);
+
+
 /**
 |--------------------------------------------------
 | PRODUCTS

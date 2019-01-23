@@ -5,6 +5,9 @@ export const LOGOUT_USER = 'logout_user';
 export const UPDATE_USER_DATA = 'update_user_data';
 export const CLEAR_UPDATE_USER_DATA = 'clear_update_user_data';
 export const ADD_TO_USER_CART = 'add_to_user_cart';
+export const GET_CART_USER_ITEMS = 'get_cart_user_items';
+export const REMOVE_CART_USER_ITEM = 'remove_cart-user_item';
+export const ON_SUCCESS_USER_BUY = 'on_success_user_buy';
 
 export const GET_PRODUCTS_BY_SELL = 'get_products_by_sell';
 export const GET_PRODUCTS_BY_ARRIVAL = 'get_products_by_arrival';
