@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import MyButton from '../utils/button';
+import { withRouter } from 'react-router-dom';
 
 import { connect } from 'react-redux';
 import './card.css';
@@ -20,8 +21,22 @@ class Card extends Component {
     return (
       <div className={`card_item_wrapper col-12 col-md-4 ${props.grid}`}>
         <div className="image" style={{
-          background:`url(${this.renderCardImage(props.images)}) no-repeat`
-        }}>
+          background:`url(${this.renderCardImage(props.images)})`,
+          backgroundSize: 'contain',
+          backgroundPosition: 'center' 
+        }}
+        onClick={()=> {this.props.history.push(`/product_detail/${props._id}`)}}
+        >
+{/* 
+.login-banner {
+  min-height: calc(100vh - 73.35px);
+  background: url('/img/background_two.jpg');
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+} */}
+
         </div>
         <div className="action_container">
           <div className="tags">
@@ -69,5 +84,5 @@ const mapStateToProps = (state) => ({
     user: state.user
 })
 
-export default connect(mapStateToProps)(Card);
+export default connect(mapStateToProps)(withRouter(Card));
 

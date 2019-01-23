@@ -37,18 +37,26 @@ export class ProdImg extends Component {
     })
   }
 
-  showThumbs = () => {
+  showThumbs = () => (
     this.state.lightboxImages.map((item,i) => (
-      i > 0 ?
-      <div
-        key={i}
-        onClick={()=> this.handleLightBox(i)}
-        className="thumb"
-        style={{background: `url(${item}) no-repeat`}}>
+      i > 0 && i < 3 ?
+      <div className="thumb_container">
+        <img className="thumb mx-auto" 
+          alt="additional amiibo pics" 
+          src={`${item}`}
+          key={i}
+          onClick={()=> this.handleLightBox(i)}>
+        </img>
+        {/* <div
+          key={i}
+          onClick={()=> this.handleLightBox(i)}
+          className="thumb"
+          style={{background: `url(${item}) no-repeat`}}>
+        </div> */}
       </div>
       :null
     ))
-  }
+  )
 
   renderCardImage = (images) => {
     if(images.length > 0) {
@@ -72,7 +80,7 @@ export class ProdImg extends Component {
           </div>
         </div>
         <div className="main_thumbs">
-          {/* {this.showThumbs(detail)} */}
+          {this.showThumbs(detail)}
         </div>
         {
           this.state.lightbox ?

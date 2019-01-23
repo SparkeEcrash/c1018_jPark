@@ -1,0 +1,21 @@
+.dropzone {
+  height: 23vh;
+}
+
+.dropzone_box {
+  float: left;
+  width: 25%;
+  height: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.dropzone_box  .wrap {
+  background: #eaeaea;
+  height: 100%;
+  box-sizing: border-box;
+  font-size: 49px;
+  background-size: contain !important;
+  background-position: center center !important;
+  /* border: 1px solid #eaeaea; */
+}

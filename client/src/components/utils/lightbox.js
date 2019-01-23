@@ -46,7 +46,7 @@ export class ImageLightBox extends Component {
         isOpen={this.state.lightboxIsOpen}
         onClickPrev={()=>this.gotoPrevious()}
         onClickNext={()=>this.gotoNext()}
-        onClose={()=>this.closeLightbox}
+        onClose={()=>this.closeLightbox()}
       >
       </Lightbox>
     )

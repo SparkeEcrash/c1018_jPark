@@ -1,5 +1,6 @@
 import React from "react";
 import MyButton from "../utils/button";
+import './prodinfo.css';
 
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import faTruck from "@fortawesome/fontawesome-free-solid/faTruck";
@@ -71,7 +72,7 @@ function ProdInfo(props) {
   const detail = props.detail;
   console.log(detail);
   return (
-    <div className="card text-center">
+    <div className="card text-center prod_info">
       <div className="card-body">
         <h4 className="card-title"><strong>{detail.name}</strong></h4>
         <p className="card-text text-muted">{detail.description}</p>
@@ -81,12 +82,10 @@ function ProdInfo(props) {
         <li className="list-group-item">{ showProdCost(detail) }</li>
         <li className="list-group-item">{ showProdSeries(detail) } </li>
         <li className="list-group-item">{ showProdWave(detail) } </li>
-      </ul>
-      <div className="card-body">
-        <MyButton
+        <li className="list-group-item">        <MyButton
           type="add_to_cart_link"
-        />
-      </div>
+        /> </li>
+      </ul>
     </div>
     )
 }

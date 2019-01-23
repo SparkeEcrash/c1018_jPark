@@ -32,6 +32,15 @@ function button(props) {
         Add to Cart
       </div>
       break;
+    case "add_amiibo_link":
+    template = 
+    <div className="add_amiibo_link" onClick={(event)=> {
+      props.runAction();
+    }}>
+      <FontAwesomeIcon icon={faShoppingBag}/>
+        Add Amiibo
+      </div>
+      break;
     default: 
     template='';
   }

@@ -10,7 +10,7 @@ export class HomeBanner extends Component {
         <div className="text-right">
           <h1 className="banner-title text-lowercase">Gityo Amiibo</h1>
           <h4 className="text-capitalize text-slanted">Site for Amiibo Hunters</h4>
-          <a href="products.html" className="btn btn-yellow">
+          <a href="store" className="btn btn-yellow">
             view collection
           </a>
         </div>

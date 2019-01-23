@@ -16,6 +16,7 @@ export class SingleProduct extends Component {
         this.props.history.push('/store')
       }
     });
+    window.scrollTo(0, 0);
   }
 
   componentWillUnmount() {
@@ -23,7 +24,6 @@ export class SingleProduct extends Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <div className="single-product-background d-flex flex-column justify-content-center">
         {/* <TopBorder title='Amiibo Detail'></TopBorder> */}
@@ -31,11 +31,11 @@ export class SingleProduct extends Component {
         {
           this.props.products.prodDetail ?
           <div className="row">
-            <div className="col-6">
+            <div className="col-6 d-flex flex-column justify-content-center">
               <ProdImg detail={this.props.products.prodDetail}></ProdImg>
 
             </div>
-            <div className="col-6">
+            <div className="col-6 d-flex flex-column justify-content-center">
               <ProdInfo
                   detail={this.props.products.prodDetail}
               />

@@ -23,6 +23,7 @@ export class Shop extends Component {
   }
 
   componentDidMount() {
+    window.scrollTo(0, 0);
     this.props.dispatch(getSeries());
     this.props.dispatch(getWaves());
 
@@ -92,7 +93,7 @@ export class Shop extends Component {
         <TopBorder title='Browse Amiibos'></TopBorder>
         <div className="container-fluid d-flex flex-column">
           <div className="row">
-            <div className="col-12 col-md-3 order-md-1 order-2">
+            <div className="col-12 col-md-3 col-xl-2 order-md-1 order-2">
               <CollapseCheckbox
                 initState={true}
                 title="Series"
@@ -112,7 +113,7 @@ export class Shop extends Component {
                 handleFiltersProp={(filters)=>this.handleFilters(filters,'price')}
               ></CollapseRadio>
             </div>
-            <div className="col-12 col-md-9 order-md-2 order-1 d-flex flex-column">
+            <div className="col-12 col-md-9 col-xl-10 order-md-2 order-1 d-flex flex-column">
               <div>
                 <LoadmoreCards
                   grid={this.state.grid}
