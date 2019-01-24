@@ -6,7 +6,21 @@ import { connect } from 'react-redux';
 import './card.css';
 import { addToCart } from '../../actions/user_actions';
 
+import Dialog from '@material-ui/core/Dialog';
+
 class Card extends Component {
+
+  state = {
+    open: false
+  };
+
+  handleClickOpen = () => {
+    this.setState({ open: true });
+  }
+
+  handleClose = () => {
+    this.setState({ open: false })
+  }
 
   renderCardImage(images) {
     if(images.length > 0) {
@@ -58,6 +72,7 @@ class Card extends Component {
             type="bag_link"
             runAction={()=> {
               this.props.dispatch(addToCart(props._id))
+              this.handleClickOpen()
             }}
             />
             : null}
@@ -66,6 +81,17 @@ class Card extends Component {
             </div>
           </div>
         </div>
+        <Dialog
+          open={this.state.open}
+          onClose={this.handleClose}
+        >
+          <div className="dialog_alert text-center">
+            <h1>Amiibo Added</h1>
+            <h3>
+              Make sure you check out!
+            </h3>
+          </div>
+        </Dialog>
       </div>
       );
   }

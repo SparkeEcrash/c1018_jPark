@@ -1,7 +1,9 @@
 import {
   GET_PRODUCTS_TO_SHOP,
   GET_SERIES,
+  ADD_SERIES,
   GET_WAVES,
+  ADD_WAVE,
   GET_PRODUCT_DETAIL,
   CLEAR_PRODUCT_DETAIL,
   ADD_PRODUCT,
@@ -20,8 +22,12 @@ export default function(state={}, action) {
         toShopSize: action.payload.size}
     case GET_SERIES:
       return {...state, series: action.payload}
+    case ADD_SERIES:
+      return {...state, addSeries: action.payload.success, series: action.payload.series}
     case GET_WAVES:
       return {...state, waves: action.payload}
+    case ADD_WAVE:
+      return {...state, addWave: action.payload.success, waves: action.payload.waves}
     case GET_PRODUCT_DETAIL:
       return {...state, prodDetail: action.payload}
     case CLEAR_PRODUCT_DETAIL:

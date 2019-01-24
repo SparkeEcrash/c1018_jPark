@@ -1,4 +1,4 @@
-import React, { Fragment, Component } from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import './User.css'
 
@@ -8,6 +8,7 @@ import UserProfile from './UserProfile';
 import UserProfileInformation from './UserProfileInformation';
 import UserOrderHistory from './UserOrderHistory';
 import AdminAddProducts from './AdminAddProducts';
+import AdminEditCategories from './AdminEditCategories';
 
 export class UserDashboard extends Component {
   state = {
@@ -49,16 +50,20 @@ export class UserDashboard extends Component {
           }
           {this.state.display === 'order_history' ? 
           <div className="col-12 col-md-6 offset-md-2 order-md-2 order-1 d-flex flex-column justify-content-center">
-            <UserOrderHistory></UserOrderHistory>
+            <UserOrderHistory products={this.props.user.userData.history}></UserOrderHistory>
           </div>
           : null
           }
           {this.state.display === 'add_products' ?
-          <Fragment>
             <div className="col-12 col-md-10 order-md-2 order-1 d-flex flex-column justify-content-center">
               <AdminAddProducts className="d-none" user={this.props.user}></AdminAddProducts>
             </div>
-          </Fragment>
+          : null
+          }
+          {this.state.display === 'edit_categories' ? 
+            <div className="col-12 col-md-10 order-md-2 order-1 d-flex flex-column justify-content-center">
+              <AdminEditCategories></AdminEditCategories>
+            </div>
           : null
           }
         </div>

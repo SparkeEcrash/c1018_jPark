@@ -230,8 +230,8 @@ router.get('/api/user/removeFromCart',auth,(req,res)=>{
       });
       Amiibo.
       find({'_id':{ $in: array}}).
-      populate('brand').
-      populate('wood').
+      populate('series').
+      populate('wave').
       exec((err,cartDetail) => {
         return res.status(200).json({
           cartDetail,

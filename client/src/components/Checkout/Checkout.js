@@ -42,9 +42,9 @@ export class Checkout extends Component {
   calculateTotal = (cartDetail) => {
     let total = 0;
     cartDetail.forEach(item=> {
-      total += parseInt(item.price, 10) * item.quantity
+      total += parseInt(item.price*100) * item.quantity
     });
-
+    total = total/100;
     this.setState({
       total,
       showTotal: true
@@ -122,7 +122,7 @@ export class Checkout extends Component {
 
   render() {
     return (
-      <div className="checkout-banner container-fluid d-flex justify-content-center">
+      <div className="checkout-banner container-fluid d-flex justify-content-center align-items-center">
         { this.state.showTotal ? 
         <div className="col-8">
           <CheckoutProductBlock
