@@ -7,9 +7,7 @@
   background-repeat: no-repeat;
 }
 
-.checkout-empty-banner {
-  min-height: calc(100vh - 73.35px);
-}
+
 
 .cart_no_items svg ,
 .cart_success svg {

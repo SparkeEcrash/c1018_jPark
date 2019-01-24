@@ -1,0 +1,20 @@
+.add_wave_list {
+  height: 30vh;
+  background-color: white;
+  overflow-y: scroll;
+  width: 100%;
+}
+
+.add_wave {
+  height: 30vh;
+  background-color: white;
+}
+
+.add_wave_list .category_item {
+  font-weight: 300;
+  border: 1px solid #f1f1f1;
+  padding: 10px;
+  background: #999592;
+  color: #fff;
+  width: 100%;
+}

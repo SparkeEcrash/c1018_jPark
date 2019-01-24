@@ -1,3 +1,17 @@
 .header-logo {
   height: 78px;
 }
+
+.cart_link {
+  position: relative;
+}
+
+.cart_link span {
+  position: absolute;
+  background: red;
+  color: #ffff;
+  right: -10%;
+  border-radius: 50%;
+  padding: 0px 7px 2px 7px;
+  font-size: 12px;
+}

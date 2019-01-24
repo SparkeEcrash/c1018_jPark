@@ -2,7 +2,9 @@ import axios from 'axios';
 import {
   GET_PRODUCTS_TO_SHOP,
   GET_SERIES,
+  ADD_SERIES,
   GET_WAVES,
+  ADD_WAVE,
   GET_PRODUCT_DETAIL,
   CLEAR_PRODUCT_DETAIL,
   ADD_PRODUCT,
@@ -90,3 +92,42 @@ export function clearProduct() {
     payload: ''
   }
 }
+
+export function addSeries(dataToSubmit, existingSeries) {
+  const request = axios.post(`${PRODUCT_SERVER}/series`, dataToSubmit)
+    .then(response => {
+      let series = [
+        ...existingSeries,
+        response.data.series
+      ];
+      return {
+        success: response.data.success,
+        series
+      }
+    });
+
+    return {
+      type: ADD_SERIES,
+      payload: request
+    }
+}
+
+export function addWave(dataToSubmit, existingWaves) {
+  const request = axios.post(`${PRODUCT_SERVER}/wave`, dataToSubmit)
+    .then(response => {
+      let waves = [
+        ...existingWaves,
+        response.data.wave
+      ];
+      return {
+        success: response.data.success,
+        waves
+      }
+    });
+
+    return {
+      type: ADD_WAVE,
+      payload: request
+    }
+}
+

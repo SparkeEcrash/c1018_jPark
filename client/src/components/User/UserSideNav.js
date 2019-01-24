@@ -16,10 +16,10 @@ const links = [
 ]
 
 const admin = [
-  {
-    name: 'Site Info',
-    display: 'site_info'
-  },
+  // {
+  //   name: 'Site Info',
+  //   display: 'site_info'
+  // },
   {
     name: 'Add Products',
     display: 'add_products'

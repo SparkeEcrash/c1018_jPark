@@ -53,13 +53,27 @@ class Header extends Component {
     })
   }
 
-  defaultLinkPage = (item, i) => (
-    <li className="nav-item mx-2" key={i}>
-      <Link to={item.linkTo} className="nav-link">
-        {item.name}
-      </Link>
-    </li>
-  )
+  defaultLinkPage = (item, i) => {
+    if(item.name === 'Checkout') {
+      const user = this.props.user.userData;
+      return (
+        <li className="nav-item mx-2 cart_link" key={i}>
+          <span className="align-text-top text-right">{user.cart ? user.cart.length: 0}</span>
+          <Link to={item.linkTo} className="nav-link">
+            Checkout
+          </Link>
+        </li>
+      )  
+    } else {      
+      return (
+        <li className="nav-item mx-2" key={i}>
+          <Link to={item.linkTo} className="nav-link">
+            {item.name}
+          </Link>
+        </li>
+      )  
+    }
+  }
 
   defaultLinkUser = (item, i) => (
     <li className="nav-item mx-2" key={i} onClick={item.name === 'Log Out' ? this.logOutHandler : null}>

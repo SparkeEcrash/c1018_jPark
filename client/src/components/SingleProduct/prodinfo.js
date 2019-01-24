@@ -1,16 +1,29 @@
-import React from "react";
+import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import MyButton from "../utils/button";
 import './prodinfo.css';
+import Dialog from '@material-ui/core/Dialog';
 
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import faTruck from "@fortawesome/fontawesome-free-solid/faTruck";
 import faCheck from "@fortawesome/fontawesome-free-solid/faCheck";
 import faTimes from "@fortawesome/fontawesome-free-solid/faTimes";
 
-function ProdInfo(props) {
+export class ProdInfo extends Component {
 
-  const showProdTags = (detail) => (
+  state = {
+    open: false
+  }
+
+  handleClickOpen = () => {
+    this.setState({ open: true });
+  }
+
+  handleClose = () => {
+    this.setState({ open: false })
+  }
+
+  showProdTags = (detail) => (
     <div className="product_tags">
       <div className="row">
       { detail.shipping ? 
@@ -44,48 +57,60 @@ function ProdInfo(props) {
     </div>
   )
 
-  const showProdActions = (detail) => (
+  showProdActions = (detail) => (
         <MyButton
           type="add_to_cart_link"
           runAction={()=>{
-            props.addToCart(detail._id)
+            this.props.addToCart(detail._id);
+            this.handleClickOpen();
           }}
         />
   )
 
-  const showProdCost = (detail) => (
+  showProdCost = (detail) => (
     <div className="price">Price: $ {detail.price} </div>
   )
 
-  const showProdSeries = (detail) => (
+  showProdSeries = (detail) => (
     <div className="series">Series: {detail.series.name} </div>
   )
 
-  const showProdWave = (detail) => (
+  showProdWave = (detail) => (
     <div className="wave">Wave: {detail.wave.name} </div>
   )
 
-  const detail = props.detail;
-  const user = props.user.userData;
-  return (
-    <div className="card text-center prod_info">
-      <div className="card-body">
-        <h4 className="card-title"><strong>{detail.name}</strong></h4>
-        <p className="card-text text-muted">{detail.description}</p>
-      </div>
+  render() {
+    const detail = this.props.detail;
+    const user = this.props.user.userData;
+    return (
+      <div className="card text-center prod_info">
+        <div className="card-body">
+          <h4 className="card-title"><strong>{detail.name}</strong></h4>
+          <p className="card-text text-muted">{detail.description}</p>
+        </div>
       <ul className="list-group list-group-flush">
-        <li className="list-group-item">{ showProdTags(detail) }</li>
-        <li className="list-group-item">{ showProdCost(detail) }</li>
-        <li className="list-group-item">{ showProdSeries(detail) } </li>
-        <li className="list-group-item">{ showProdWave(detail) } </li>
+        <li className="list-group-item">{ this.showProdTags(detail) }</li>
+        <li className="list-group-item">{ this.showProdCost(detail) }</li>
+        <li className="list-group-item">{ this.showProdSeries(detail) } </li>
+        <li className="list-group-item">{ this.showProdWave(detail) } </li>
         {user.isAuth ? 
         <li className="list-group-item">        
-          {showProdActions(detail)}
+          {this.showProdActions(detail)}
         </li>
         :null}
       </ul>
+      <Dialog
+        open={this.state.open}
+        onClose={this.handleClose}
+      >
+        <div className="dialog_alert text-center">
+          <h1>Amiibo Added</h1>
+          <h3>Make sure you check out!</h3>
+        </div>
+      </Dialog>
     </div>
     )
+  }
 }
 
 function mapStateToProps(state) {
