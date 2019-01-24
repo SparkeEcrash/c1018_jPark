@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import Dialog from '@material-ui/core/Dialog';
 
 import FormField from '../../components/utils/Form/formfield';
 import { update, generateData, isFormValid, resetFields } from'../../components/utils/Form/formActions';
 
 import { connect } from 'react-redux';
+import {withAlert} from 'react-alert';
 import { getSeries, addSeries } from '../../actions/products_actions';
 
 import './AdminAddSeries.css';
@@ -74,6 +74,7 @@ export class AdminAddSeries extends Component {
         console.log(response);
         if(response.success) {
           this.resetFieldsHandler();
+          this.props.alert.show('Series added!');
         } else {
           this.setState({formError: true})
         }
@@ -83,10 +84,6 @@ export class AdminAddSeries extends Component {
         formError: true
       })
     }
-  }
-
-  handleClose = () => {
-    this.setState({ formSuccess: false })
   }
 
   componentDidMount = () => {
@@ -116,7 +113,7 @@ export class AdminAddSeries extends Component {
               <button className="btn btn-large text-uppercase" onClick={(event)=>this.submitForm(event)}>
                 Add series
               </button>
-              { this.state.formError ?
+                { this.state.formError ?
                 <div className="mt-2 error_label">
                   Entry required
                 </div>
@@ -127,17 +124,6 @@ export class AdminAddSeries extends Component {
         </div>
         </div>
         </div>
-        <Dialog
-          open={this.state.formSuccess}
-          onClose={this.handleClose}
-        >
-          <div className="dialog_alert text-center">
-            <h1>Series Added</h1>
-            <h3>
-              Series has been added
-            </h3>
-          </div>
-        </Dialog>
       </div>
     )
   }
@@ -148,4 +134,4 @@ const mapStateToProps = (state) => ({
 })
 
 
-export default connect(mapStateToProps)(AdminAddSeries)
+export default connect(mapStateToProps)(withAlert(AdminAddSeries));

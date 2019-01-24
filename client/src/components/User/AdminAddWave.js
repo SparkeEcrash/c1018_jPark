@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import Dialog from '@material-ui/core/Dialog';
 
 import FormField from '../../components/utils/Form/formfield';
 import { update, generateData, isFormValid, resetFields } from'../../components/utils/Form/formActions';
 
 import { connect } from 'react-redux';
+import {withAlert} from 'react-alert';
 import { getWaves, addWave } from '../../actions/products_actions';
 
 import './AdminAddWave.css';
@@ -71,8 +71,9 @@ export class AdminAddWave extends Component {
       this.props.dispatch(addWave(dataToSubmit, existingWaves)).then(response => {
         if(response.success) {
           this.resetFieldsHandler();
+          this.props.alert.show('Wave added!');
         } else {
-          this.setSTate({formError: true})
+          this.setState({formError: true})
         }
       })
     } else {
@@ -80,10 +81,6 @@ export class AdminAddWave extends Component {
         formError: true
       })
     }
-  }
-
-  handleClose = () => {
-    this.setState({ formSuccess: false })
   }
 
   componentDidMount = () => {
@@ -124,17 +121,6 @@ export class AdminAddWave extends Component {
         </div>
         </div>
         </div>
-        <Dialog
-          open={this.state.formSuccess}
-          onClose={this.handleClose}
-        >
-          <div className="dialog_alert text-center">
-            <h1>Wave Added</h1>
-            <h3>
-              New Wave has been Added!
-            </h3>
-          </div>
-        </Dialog>
       </div>
     )
   }
@@ -145,4 +131,4 @@ const mapStateToProps = (state) => ({
 })
 
 
-export default connect(mapStateToProps)(AdminAddWave)
+export default connect(mapStateToProps)(withAlert(AdminAddWave));

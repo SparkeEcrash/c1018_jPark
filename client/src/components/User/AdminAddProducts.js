@@ -6,6 +6,7 @@ import FileUpload from '../../components/utils/Form/fileupload';
 import Dialog from '@material-ui/core/Dialog';
 
 import { connect } from 'react-redux';
+import {withAlert} from 'react-alert';
 import { getSeries, getWaves, addProduct, clearProduct } from
 '../../actions/products_actions';
 
@@ -213,6 +214,7 @@ export class AdminAddProducts extends Component {
     if(formIsValid) {
       this.props.dispatch(addProduct(dataToSubmit)).then(()=> {
         if(this.props.products.addProduct.success) {
+          this.props.alert.show(`${this.state.formdata.name.value} added!`)
           this.resetFieldHandler();
         } else {
           this.setState({
@@ -349,14 +351,6 @@ export class AdminAddProducts extends Component {
                 </div>
               </div>
             </div>
-            <Dialog open={this.state.formSuccess}>
-          <div className="dialog_alert text-center">
-            <h1>Amiibo Added</h1>
-            <h3>
-              The Amiibo has been added to the store
-            </h3>
-          </div>
-        </Dialog>
           </div>
         </form>
     )
@@ -369,4 +363,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(AdminAddProducts);
+export default connect(mapStateToProps)(withAlert(AdminAddProducts));
