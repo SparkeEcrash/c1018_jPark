@@ -1,12 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Capriola|Caveat+Brush|Fredoka+One|Gochi+Hand|Knewave');
 
-:root {
-  --mainYellow: #fdbe02;
-  --mainWhite: #fff;
-  --mainBlack: #071013;
-  --mainGrey: #9b9999;
-  --TransGrey: rgba(0, 0, 0, 0.1);
-}
+/* size of rem's are adjustable on client size by user */
+/* you need !important to override bootstrap classes*/
 
 html {
   font-size: 90%;
@@ -21,6 +16,12 @@ body {
 
 /* GENERAL STYLES */
 :root {
+  --mainRed: #E6001D;
+  --mainGreen: #A6C80F;
+  --mainBlue: #009BEB;
+  --mainTurqoise: #009782;
+  --mainOrange: #F5AA00;
+  --mainPink: #E62D8B;
   --mainYellow: #fdbe02;
   --mainWhite: #fff;
   --mainBlack: #071013;
@@ -28,8 +29,166 @@ body {
   --TransGrey: rgba(0, 0, 0, 0.1);
 }
 
+* {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+/* ############## AUTH SPIN ################ */
+.main_loader {
+  text-align: center;
+  min-height: calc(100vh - 73.35px);
+  background-color: white; 
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+.spin{
+  margin-bottom: 73.35px;
+}
+/* auth spin end */
+
+/* ############## MODAL ################ */
+.dialog_alert {
+  padding: 51px;
+  font-size: 30px;
+}
+/* modal end */
+
+/* ############## LAYOUT ################ */
+
+.navbar-toggler {
+  outline: none !important;
+  border: none;
+  font-size: 2.2rem;
+  color: var(--mainYellow) !important;
+}
+
+.nav-link {
+  font-size: 1.6rem;
+  color: var(--mainGrey) !important;
+}
+
+.nav-link:hover {
+  font-size: 1.6rem;
+  color: var(--mainBlack) !important;
+}
+
+.nav-link-home:hover {
+  font-size: 1.6rem;
+  color: var(--mainBlue) !important;
+}
+
+.nav-link-account:hover {
+  font-size: 1.6rem;
+  color: var(--mainGreen) !important;
+}
+
+.nav-link-amiibos:hover {
+  font-size: 1.6rem;
+  color: var(--mainRed) !important;
+}
+
+.nav-link-checkout:hover {
+  font-size: 1.6rem;
+  color: var(--mainTurqoise) !important;
+}
+
+.nav-active {
+  border-bottom: 0.1rem solid var(--mainGrey);
+}
+
+.nav-active-red {
+  border-bottom: 0.1rem solid var(--mainRed);
+}
+
+.nav-active-green {
+  border-bottom: 0.1rem solid var(--mainGreen);
+}
+
+.nav-active-blue {
+  border-bottom: 0.1rem solid var(--mainBlue);
+}
+
+.nav-active-turqoise {
+  border-bottom: 0.1rem solid var(--mainTurqoise);
+}
+
+.nav-active-orange {
+  border-bottom: 0.1rem solid var(--mainOrange);
+}
+
+.nav-active-pink {
+  border-bottom: 0.1rem solid var(--mainPink);
+}
+
+.cart_link {
+  position: relative;
+}
+
+.cart_link span {
+  position: absolute;
+  color: #ffff;
+  right: -10%;
+  border-radius: 50%;
+  padding: 0px 7px 2px 7px;
+  font-size: 12px;
+}
+
+.cart_link span.red {
+  background: var(--mainRed)!important;
+}
+
+.cart_link span.green {
+  background: var(--mainGreen)!important;
+}
+
+.cart_link span.blue {
+  background: var(--mainBlue)!important;
+}
+
+.cart_link span.turqoise {
+  background: var(--mainTurqoise)!important;
+}
+
+.cart_link span.orange {
+  background: var(--mainOrange)!important;
+}
+
+.cart_link span.pink {
+  background: var(--mainPink)!important;
+}
+
+.footer {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.footer-title {
+  border: 0.2rem solid var(--mainYellow);
+  padding: 0.4rem;
+}
+
+.footer-icon {
+  color: var(--mainYellow);
+}
+
+.footer-icon:hover {
+  color: var(--mainWhite);
+}
+
+/* layout end*/
+
+/* ############## HOME PAGE ################ */
+
 .text-slanted {
-  font-family: "Fredoka One", cursive;
+  font-family: "Fredoka One", Sans-Serif;
   color: white;
 }
 
@@ -49,354 +208,341 @@ body {
   background: var(--mainBlack);
   color: var(--mainYellow);
 }
+/* homepage end*/
 
-.btn-black {
-  background: transparent;
-  text-transform: capitalize;
-  font-size: 1.2rem;
-  color: var(--mainBlack);
-  border-radius: 0!important;
-  border: 0.1rem solid var(--mainBlack);
+/* ############## ACCOUNT PAGE ################ */
+
+.nav_account {
+  color: white;
+  background-color: var(--mainGrey)!important;
 }
 
-.btn-black:hover {
-  background: var(--mainBlack);
-  color: var(--mainWhite);
+.nav_admin {
+  color: white;
+  background-color: var(--mainGrey)!important;
 }
 
-/* .banner-products,
-.banner-single-product,
-.banner-store {
-  min-height: 60vh;
-  background: linear-gradient(rgba(255, 255, 255,0.5), rgba(255, 255, 255,0.5)), url('../img/pageBcg/productsBcg.jpeg')
-  center/cover fixed no-repeat;
-} */
-
-/* .banner-single-product {
-  min-height: 60vh;
-  background: linear-gradient(rgba(255, 255, 255,0.5), rgba(255, 255, 255,0.5)), url('../img/pageBcg/singleBcg.jpeg')
-  center/cover fixed no-repeat;
-} */
-
-/* .banner-store {
-  min-height: 60vh;
-  background: linear-gradient(rgba(255, 255, 255,0.5), rgba(255, 255, 255,0.5)), url('../img/pageBcg/storeBcg.jpeg')
-  center/cover fixed no-repeat;
-} */
-
-/* ############## HOME PAGE ################ */
-/* navbar start*/
-.navbar-toggler {
-  outline: none !important;
-  border: none;
-  font-size: 2.2rem;
-  color: var(--mainYellow) !important;
-}
-/* size of rem's are adjustable on client size by user */
-/* you need !important to override bootstrap classes*/
-
-.nav-link {
-  font-size: 1.6rem;
-  border-bottom: 0.1rem solid var(--mainGrey);
+.side_nav {
+  cursor: pointer;
 }
 
-.nav-active {
-  border-bottom: 0.1rem solid var(--mainYellow)
+.side_nav_default_active {
+  color:var(--mainRed);
 }
 
-.navbar-icon {
-  font-size: 1.6rem;
+.side_nav_default:hover {
+  color: white;
+  background-color: var(--mainRed);
 }
 
-.navbar-cart-icon {
-  color: var(--mainBlack);
-  position: relative;
+.side_nav_profile_information_active {
+  color:var(--mainGreen);
 }
-/* position relative is needed here because the number used to represent quantity in cart will be absolute */
 
-.navbar-cart-icon:hover {
+.side_nav_profile_information:hover {
+  color: white;
+  background-color: var(--mainGreen);
+}
+
+.side_nav_order_history_active {
+  color:var(--mainBlue);
+}
+
+.side_nav_order_history:hover {
+  color: white;
+  background-color: var(--mainBlue);
+}
+
+.side_nav_add_products_active {
+  color:var(--mainTurqoise);
+}
+
+.side_nav_add_products:hover {
+  color: white;
+  background-color: var(--mainTurqoise);
+}
+
+.side_nav_edit_categories_active {
+  color:var(--mainOrange);
+}
+
+.side_nav_edit_categories:hover {
+  color: white;
+  background-color: var(--mainOrange);
+}
+
+.no_history {
+  background-color: white;
+  height: 20vh;
+}
+
+.add_series_list {
+  height: 30vh;
+  background-color: white;
+  overflow-y: scroll;
+  width: 100%;
+}
+
+.add_series {
+  height: 30vh;
+  background-color: white;
+}
+
+.add_series_list .category_item {
+  font-weight: 300;
+  border: 1px solid white;
+  padding: 10px;
+  background: var(--mainGrey);
+  color: white;
+  width: 100%;
+}
+
+.add_wave_list {
+  height: 30vh;
+  background-color: white;
+  overflow-y: scroll;
+  width: 100%;
+}
+
+.add_wave {
+  height: 30vh;
+  background-color: white;
+}
+
+.add_wave_list .category_item {
+  font-weight: 300;
+  border: 1px solid #f1f1f1;
+  padding: 10px;
+  background: #999592;
+  color: #fff;
+  width: 100%;
+}
+
+.dropzone {
+  height: 23vh;
+}
+
+.dropzone_box {
+  float: left;
+  width: 25%;
+  height: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.dropzone_box  .wrap {
+  background: #eaeaea;
+  height: 100%;
+  box-sizing: border-box;
+  font-size: 49px;
+  background-size: contain !important;
+  background-position: center center !important;
+}
+
+/* account end*/
+
+/* ############## AMIIBOS PAGE ################ */
+
+.load_more_container span {
+  cursor: pointer;
+  background: red;
+  color: #ffffff;
+  font-size: 27px;
+  padding: 10px 60px;
+  display: table;
+  margin: 0 auto;
+}
+
+.card_item_wrapper .image {
+  width: 100%;
+  height: 50vh;
+  background-position: center !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  border: 1px solid #f0f0f0;
+}
+
+.card_item_wrapper .tags .series,
+.card_item_wrapper .tags .name,
+.card_item_wrapper .tags .price {
+    text-align: center;
+    margin: 5px 0;
+}
+
+.card_item_wrapper .tags .series {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.card_item_wrapper .tags .series.red{
+  color: var(--mainRed);
+}
+
+.card_item_wrapper .tags .series.green{
+  color: var(--mainGreen);
+}
+
+.card_item_wrapper .tags .series.blue{
+  color: var(--mainBlue);
+}
+
+.card_item_wrapper .tags .series.turqoise{
+  color: var(--mainTurqoise);
+}
+
+.card_item_wrapper .tags .series.orange{
+  color: var(--mainOrange);
+}
+
+.card_item_wrapper .tags .series.pink{
+  color: var(--mainPink);
+}
+
+.card_item_wrapper .tags .name {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.card_item_wrapper .tags .price {
+  font-weight: 300;
+  font-size: 15px;
   color: var(--mainGrey);
 }
 
-.cart-items {
-  color: var(--mainWhite);
-  position: absolute;
-  top: -15%;
-  right: -25%;
-  padding: 0.2rem 0.3rem;
-  background: var(--mainYellow);
-  font-size: 0.1rem;
-  border-radius: 50%;
+.card_link,
+.bag_link,
+.add_to_cart_link,
+.add_amiibo_link {
+    width: 100%;
+    border: 1px solid var(--mainGrey);
+    padding: 5px 10px;
+    display: block;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: var(--mainGrey);
+    background: white;
+    transition: all 200ms ease-in;
+    cursor: pointer;
 }
-/* navbar end*/
+.card_link:hover,
+.bag_link:hover,
+.add_to_cart_link:hover,
+.add_amiibo_link:hover {
+    background: var(--mainGrey);
+    color: white;
+    text-decoration: none;
+}
 
-/*banner start*/
-/* .banner {
-  min-height: calc(100vh - 101px);
-  background: url('../img/pageBcg/bannerBcg.jpeg');
+.add_to_cart_link svg {
+  margin-right: 10px;
+}
+
+.card_item_wrapper .actions {
+  display: flex;
+  margin: 0 0 10px 0;
+}
+
+.card_item_wrapper .actions .button_wrap:nth-child(1) {
+  flex-grow: 1;
+  padding-right: 10px;
+}
+
+.no_result {
+  font-size: 40px;
+  color: var(--mainGrey);
+  text-align: center;
+  padding: 10vh 0;
+}
+
+/* amiibo end */
+
+/* ############## SINGLE PRODUCT ################ */
+
+.prod_info {
+  border: solid 8px black;
+}
+
+.product_detail_wrapper .main_pic {
+  box-sizing: border-box;
+  cursor: pointer;
+  background-color: white;
+}
+
+.product_detail_wrapper .main_pic div {
+  width: 100%;
+  height: 60vh;
+  background-size: contain !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  border: 8px solid black;
+}
+
+.product_detail_wrapper .main_thumbs {
+  margin-top: 10px;
+}
+
+.product_detail_wrapper .main_thumbs .thumb_container {
+  height: 10vh;
+  width: 50%;
+  float: left;
+}
+
+.product_detail_wrapper .main_thumbs .thumb_container .thumb {
+  cursor: pointer;
+  height: 100%;
+  background-size: contain !important;
+  background-position: bottom center !important;
+  box-sizing: border-box;
+  float: left;
+  border: 8px solid black;
+}
+
+
+/* single product end */
+
+/* ############## CHECKOUT ################ */
+
+.checkout-banner {
+  min-height: calc(100vh - 73.35px);
+  background: url('/img/amiibo_two.jpg');
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
-
-} */
-/* calc can calculate the height based on the equation given */
-/* 101px is the height of the anvbar */
-
-/* services */
-.service-icon {
-  display: inline-block;
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: var(--mainYellow);
-  background: var(--mainGrey);
-  padding: 0.5rem 1rem;
-  border-radius: 50%;
 }
 
-/* categories */
-.categories-link {
-  color: var(--mainBlack);
-  text-decoration: none;
+.cart_no_items svg ,
+.cart_success svg {
+    font-size: 130px;
+    color: #717171;
 }
 
-.categories-link:hover {
-  color: var(--mainGrey);
-  text-decoration: none;
+.checkout_product_block,
+.user_cart_sum,
+.user_cart_empty {
+  height: 30vh;
 }
 
-.categories-underline {
-  height: 0.1rem;
-  width: 5rem;
-  background: var(--mainYellow)
+.checkout_product_info {
+  height: 100%;
 }
 
-.category-container {
-  position: relative;
+.checkout_product_img {
+  height: 100%;
 }
 
-.category-img {
-  transition: all 1s linear;
-}
-
-.category-container:hover .category-img {
-  opacity: 0.5;
-}
-
-.category-link {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  padding: 0.2rem 3rem 0.2rem 0.2rem;
-  background: var(--mainWhite);
-  color: var(--mainBlack);
-  clip-path: polygon(0 0, 80% 0, 100% 100%, 0 100%);
-  opacity: 0;
-  transition: all 1s linear;
-  text-decoration: none !important;
-}
-
-.category-link:hover {
-  color: var(--mainGrey);
-}
-
-.category-container:hover .category-link {
-  opacity: 1;
-}
-
-/* home filler */
-/* .home-filler {
-  min-height: 60vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/home-filler.jpeg') center/cover fixed no-repeat;
-} */
-
-.collection-link {
-  color: var(--mainYellow);
-  text-decoration: none !important;
-}
-
-.collection-link:hover {
-  color: var(--mainGrey);
-  text-decoration: none !important;
-}
-
-.collection-underline {
-  height: 0.1rem;
-  width: 5rem;
-  background: var(--mainYellow);
-  margin: 0 auto;
-}
-
-/*featured section */
-.featured-container {
-  background: var(--TransGrey);
-  position: relative;
-  overflow: hidden;
-}
-
-.featured-search-icon {
-  background: var(--mainWhite);
-  display: inline-block;
-  padding: 0.2rem 0.4rem;
-  position: absolute;
-  right: 0;
-  top: 50%;
-  font-size: 1.2rem;
-  transform: translateX(110%);
-  transition: all 1s ease-in-out;
-}
-
-.featured-container:hover .featured-search-icon {
-  transform: translateX(0%);
-}
-
-.featured-store-link {
-  background: var(--mainYellow);
-  color: var(--mainBlack);
-  padding: 0.2rem 0.4rem;
-  position: absolute;
-  right: 0;
-  top: 70%;
-  transform: translateX(110%);
-  transition: all 1s ease-in-out;
-}
-
-.featured-container:hover .featured-store-link {
-  transform: translateX(0%);
-}
-
-.featured-store-link:hover {
-  color: var(--mainBlack);
-}
-
-.old-price {
-  text-decoration: line-through;
-}
-
-/*end of featured section */
-
-/* partners */
-.partners {
-  background: var(--TransGrey);
-}
-
-.carousel-control-prev {
-  font-size: 2.5rem;
-  color: var(--mainBlack);
-  transform: translateX(-200%);
-}
-
-.carousel-control-next {
-  font-size: 2.5rem;
-  color: var(--mainBlack);
-  transform: translateX(200%);
-}
-
-/* newsletter */
-.form-icon {
-  background: var(--mainGrey);
-  color: var(--mainBlack);
-}
-
-/* skills */
-.skills {
-  background: var(--mainBlack);
-}
-
-.skill-icon {
-  color: var(--mainYellow);
-  font-size: 2rem;
-}
-
-/* footer */
-.footer {
-  background: rgba(0, 0, 0, 0.8);
-}
-
-.footer-title {
-  border: 0.2rem solid var(--mainYellow);
-  padding: 0.4rem;
-}
-
-.footer-icon {
-  color: var(--mainYellow);
-}
-
-.footer-icon:hover {
-  color: var(--mainWhite);
-}
-
-/* ######################### PRODUCTS ########################## */
-
-.products-categories-underline {
-  height: 0.2rem;
-  width: 5rem;
-  background: var(--mainYellow);
-}
-
-.products-categories-link {
-  color: var(--mainBlack);
-  text-decoration: none!important;
-}
-
-.products-categories-link:hover {
-  color: var(--mainGrey);
-}
-
-.products-color {
-  width: 1rem;
-  height: 1rem;
-}
-
-.products-color-black {
-  background: black;
-}
-
-.products-color-red {
-  background: red;
-}
-
-.products-color-blue {
-  background: blue;
-}
-
-.products-color-yellow {
-  background: yellow;
-}
-
-.products-color-green {
-  background: green;
-}
-
-/* ####################### END OF PRODUCTS ####################### */
-
-
-/* ####################### SINGLE PRODUCTS ####################### */
-.single-product-photo {
-  background: var(--TransGrey);
-  opacity: 0.5;
-  transition: all 0.3s linear;
+.cart_remove_btn {
   cursor: pointer;
-  border: 0.1rem solid transparent;
-  box-sizing: border-box!important;
 }
 
-.single-product-photo:hover {
-  border: 0.1rem solid var(--mainYellow);
-  opacity: 1;
+.checkout_mobile_product_image {
+  height: 15vh;
 }
 
-.rating-icon {
-  color: var(--mainYellow);
+.checkout_remove:hover {
+  color: red;
 }
 
-.product-info-link {
-  color: var(--mainGrey);
-  text-decoration: none!important;
-}
-
-.product-info-link:hover {
-  color: var(--mainYellow);
-}
-
-/* ####################### END OF SINGLE PRODUCT ####################### */
+/* checkout end */

@@ -7,8 +7,6 @@ import { connect } from 'react-redux';
 import {withAlert} from 'react-alert';
 import { getSeries, addSeries } from '../../actions/products_actions';
 
-import './AdminAddSeries.css';
-
 export class AdminAddSeries extends Component {
 
   state = {
@@ -35,7 +33,6 @@ export class AdminAddSeries extends Component {
   }
 
   showCategoryItems = () => {
-    console.log(this.props.products);
     return (this.props.products.series ?
       this.props.products.series.map((item, i) => (
         <div className="category_item" key={item._id}>
@@ -71,7 +68,6 @@ export class AdminAddSeries extends Component {
 
     if(formIsValid) {
       this.props.dispatch(addSeries(dataToSubmit, existingSeries)).then(response => {
-        console.log(response);
         if(response.success) {
           this.resetFieldsHandler();
           this.props.alert.show('Series added!');
@@ -92,7 +88,7 @@ export class AdminAddSeries extends Component {
 
   render() {
     return (
-      <div className="col-6">
+      <div className="col-12 mt-3 col-sm-6 mt-sm-0">
         <div className="card">
         <div className="card-header text-center">
           <div>Series</div>

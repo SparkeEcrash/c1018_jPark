@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import Dropzone from 'react-dropzone';
 import axios from 'axios';
-import './fileupload.css'
 
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import faPlusCircle from '@fortawesome/fontawesome-free-solid/faPlusCircle';
@@ -25,7 +24,6 @@ export class Fileupload extends Component {
     formData.append('file', files[0]);
     axios.post('/api/user/uploadimage', formData, config)
       .then(response => {
-        console.log(response.data)
         this.setState({
           uploading: false,
           uploadedFiles: [

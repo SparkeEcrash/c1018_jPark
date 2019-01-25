@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import ImageLightBox from '../utils/lightbox';
-import './prodimg.css';
 
 export class ProdImg extends Component {
 

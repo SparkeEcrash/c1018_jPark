@@ -1,8 +1,6 @@
 import React from 'react';
 import Card from '../utils/card';
 
-import './card_block_shop.css';
-
 export default function CardBlockShop(props) {
   const renderCards = () => (
     props.list ? 
