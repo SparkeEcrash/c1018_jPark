@@ -99,7 +99,8 @@ class Header extends Component {
       const user = this.props.user.userData;
       return (
         <li className="nav-item mx-2 cart_link" key={i}>
-          <span id={`checkout-count`} className={`d-none d-sm-block align-text-top text-right ${this.state.color}`}>{user.cart ? user.cart.length > 0 ? user.cart.length : null : null}</span>
+          {user.cart ? user.cart.length > 0 ? 
+          <span id={`checkout-count`} className={`d-none d-sm-block align-text-top text-right ${this.state.color}`}>{user.cart.length}</span> : null : null}
           <Link onClick={()=>this.updateActive(item.name)} to={item.linkTo} className={classnames(`nav-link nav-link-${item.name.toLowerCase()}`, {[`nav-active-${this.state.color}`]: item.name === active})}>
             Checkout
           </Link>
