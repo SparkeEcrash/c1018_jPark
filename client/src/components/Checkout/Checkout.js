@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import CheckoutProductBlock from '../utils/User/checkout_product_block';
-import './Checkout.css';
 
 import { connect } from 'react-redux';
 import { getCartItems, removeCartItem, onSuccessBuy } from '../../actions/user_actions';
@@ -9,7 +8,8 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import faFrown from '@fortawesome/fontawesome-free-solid/faFrown'
 import faSmile from '@fortawesome/fontawesome-free-solid/faSmile'
 
-import Paypal from '../utils/paypal'
+import PaypalLarge from '../utils/paypal-lg';
+import PaypalMedium from '../utils/paypal-md';
 
 export class Checkout extends Component {
 
@@ -31,8 +31,10 @@ export class Checkout extends Component {
         });
         this.props.dispatch(getCartItems(cartItems, user.userData.cart))
         .then(() => {
-          if(this.props.user.cartDetail.length > 0) {
-            this.calculateTotal(this.props.user.cartDetail);
+          if(this.props.user.cartDetail) {
+            if(this.props.user.cartDetail.length > 0) {
+              this.calculateTotal(this.props.user.cartDetail)
+            };
           }
         })
       }
@@ -88,14 +90,14 @@ export class Checkout extends Component {
 
   showNoItemMessage = () => (
     <div className="checkout-empty-banner container d-flex justify-content-center align-items-center">
-      <div className="col-8">
+      <div className="col-12 col-sm-8">
         <div className="card">
           <div className="row user_cart_empty d-flex justify-content-around align-items-center">
             <div className="cart_no_items">
               <FontAwesomeIcon icon={faFrown}/>
             </div>
-            <div>
-              <h1>You have no items</h1>
+            <div className="text-center">
+              <h3>You have no items</h3>
             </div>
           </div>
         </div>
@@ -105,14 +107,14 @@ export class Checkout extends Component {
 
   showSuccessMessage = () => (
     <div className="checkout-empty-banner container d-flex justify-content-center align-items-center">
-      <div className="col-8">
+      <div className="col-12 col-sm-8">
         <div className="card">
           <div className="row user_cart_empty d-flex justify-content-around align-items-center">
             <div className="cart_no_items">
               <FontAwesomeIcon icon={faSmile}/>
             </div>
-            <div>
-              <h1>Your order has been sent</h1>
+            <div className="text-center">
+              <h3>Your order has been sent</h3>
             </div>
           </div>
         </div>
@@ -124,23 +126,31 @@ export class Checkout extends Component {
     return (
       <div className="checkout-banner container-fluid d-flex justify-content-center align-items-center">
         { this.state.showTotal ? 
-        <div className="col-8">
+        <div className="col-12 col-sm-8">
           <CheckoutProductBlock
             products={this.props.user}
             removeItem={(id)=>this.removeFromCart(id)}
           ></CheckoutProductBlock>
           <div className="card mt-3 mb-3">
-            <div className="row user_cart_sum d-flex justify-content-around align-items-center">
-              <div>
-                <h2 className="">Total amount: $ {this.state.total}</h2>
+            <div className="row user_cart_sum d-flex align-items-center">
+              <div className="col-12 text-center">
+                <h3>Total amount: $ {this.state.total}</h3>
               </div>
-              <div className="paypal_button_container">
-                <Paypal
+              <div className="d-none d-sm-block col-12 text-center">
+                <PaypalLarge
                   toPay={this.state.total}
                   transactionError={(data)=>this.transactionError(data)}
                   transactionCanceled={(data)=>this.transactionCanceled(data)}
                   onSuccess={(data)=>this.transactionSuccess(data)}
-                ></Paypal>
+                ></PaypalLarge>
+              </div>
+              <div className="col-12 text-center d-sm-none">
+                <PaypalMedium
+                  toPay={this.state.total}
+                  transactionError={(data)=>this.transactionError(data)}
+                  transactionCanceled={(data)=>this.transactionCanceled(data)}
+                  onSuccess={(data)=>this.transactionSuccess(data)}
+                ></PaypalMedium>
               </div>
             </div>
           </div>

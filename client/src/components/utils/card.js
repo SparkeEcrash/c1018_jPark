@@ -3,7 +3,6 @@ import MyButton from '../utils/button';
 import { withRouter } from 'react-router-dom';
 
 import { connect } from 'react-redux';
-import './card.css';
 import { addToCart } from '../../actions/user_actions';
 
 import Dialog from '@material-ui/core/Dialog';
@@ -20,6 +19,26 @@ class Card extends Component {
 
   handleClose = () => {
     this.setState({ open: false })
+  }
+
+  generateRandomColor = () => {
+    let num = Math.floor(Math.random() * 6);
+    switch(num) {
+      case 0:
+        return 'red';
+      case 1:
+        return 'green';
+      case 2: 
+        return 'blue';
+      case 3:
+        return 'turqoise';
+      case 4:
+        return 'orange';
+      case 5:
+        return 'pink';
+      default:
+        break;
+    }
   }
 
   renderCardImage(images) {
@@ -45,7 +64,7 @@ class Card extends Component {
         </div>
         <div className="action_container">
           <div className="tags">
-            <div className="series">
+            <div className={`series ${this.generateRandomColor()}`}>
               {props.series.name}
             </div>
             <div className="name">

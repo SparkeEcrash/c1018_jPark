@@ -1,6 +1,5 @@
 import React from 'react';
 import moment from 'moment';
-import './UserOrderHistory.css';
 
 function UserOrderHistory(props) {
   //create order id using hash of the payment id in mongoose to show to user
@@ -18,9 +17,9 @@ function UserOrderHistory(props) {
   )
 
   return (
-    <div className="history_blocks">
+    <div className="history_blocks mt-5 mt-sm-0">
       {props.products.length !== 0 ? 
-      <table className="table table-striped table-dark text-center">
+      <table className="table table-sm table-striped table-dark text-center">
         <thead>
           <tr>
             <th scope="col">Date of purchase</th>

@@ -36,11 +36,11 @@ export class SingleProduct extends Component {
         {
           this.props.products.prodDetail ?
           <div className="row">
-            <div className="col-6 d-flex flex-column justify-content-center">
+            <div className="mt-3 mt-sm-0 col-12 col-sm-6 d-flex flex-column justify-content-center">
               <ProdImg detail={this.props.products.prodDetail}></ProdImg>
 
             </div>
-            <div className="col-6 d-flex flex-column justify-content-center">
+            <div className="mb-3 mb-sm-0 mt-3 mt-sm-0 col-12 col-sm-6 d-flex flex-column justify-content-center">
               <ProdInfo
                 detail={this.props.products.prodDetail}
                 addToCart={(id)=>this.addToCartHandler(id)}

@@ -93,7 +93,6 @@ export class UserProfileInformation extends Component {
               this.setState({
                 formSuccess: false
               });
-              console.log('hello');
               this.props.update('default');
             }, 2000)
           })
@@ -115,7 +114,7 @@ export class UserProfileInformation extends Component {
 
   render() {
     return (
-      <div className="card text-center">
+      <div className="card text-center mt-3 mt-sm-0">
         <div className="card-header">
           <h3 className="text-capitalize mt-2">Account Update</h3>
         </div>

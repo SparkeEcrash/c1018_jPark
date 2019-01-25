@@ -26,7 +26,6 @@ export class PayPal extends Component {
     }
 
     return (
-      <div>
         <PaypalExpressBtn
           env={env}
           client={client}
@@ -42,7 +41,6 @@ export class PayPal extends Component {
             label: 'checkout'
           }}
         ></PaypalExpressBtn>
-      </div>
     )
   }
 }

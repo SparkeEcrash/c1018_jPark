@@ -1,4 +1,5 @@
 import React, {Fragment} from 'react';
+import classnames from 'classnames';
 
 const links = [
   {
@@ -30,31 +31,33 @@ const admin = [
   }
 ]
 
-function UserSideNav({user, update}) {
+function UserSideNav({user, update, display}) {
 
   const generateLinks = (links) => (
-    links.map((item, i) => (
-      <div className="list-group-item text-capitalize" onClick={()=>update(item.display)} key={i}>
+    links.map((item, i) => {
+      return (
+      <div className={classnames(`list-group-item text-capitalize side_nav side_nav_${item.display}`, {[`side_nav_${item.display}_active`]: display === item.display})} onClick={()=>update(item.display)} key={i}>
         {item.name}
       </div>
-    ))
+      )
+    })
   )
 
   return (
 
         <Fragment>
-          <div className="account mt-0">
+          <div className="card mt-3 mt-sm-0">
             <ul className="list-group list-group-flush">
-              <div className="list-group-item text-uppercase nav-color mt-3">
+              <div className="list-group-item text-uppercase nav_account">
                 Account
               </div>
               {generateLinks(links)}
             </ul>
           </div>
           {user.userData ? user.userData.isAdmin ?           
-            <div className=" admin mt-0">
+            <div className=" card mb-3 mt-3 mb-sm-0">
               <ul className="list-group list-group-flush">
-                <div className="list-group-item text-uppercase nav-color mt-3">
+                <div className="list-group-item text-uppercase nav_admin">
                   Admin
                 </div>
                 {generateLinks(admin)}

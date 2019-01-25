@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import './User.css'
+import './AccountBackground.css'
 
-import UserLayout from './UserLayout';
 import UserSideNav from './UserSideNav';
 import UserProfile from './UserProfile';
 import UserProfileInformation from './UserProfileInformation';
@@ -15,13 +14,6 @@ export class UserDashboard extends Component {
     display: 'default'
   }
 
-  // updateDisplay = display => {
-  //   this.setState({
-  //     display: display
-  //   }, ()=>console.log(this.state)
-  //   )
-  // }
-
   updateDisplay = display => {
     this.setState({
       display: display
@@ -30,11 +22,10 @@ export class UserDashboard extends Component {
 
   render() {
     return (
-      <UserLayout>
       <div className="user-banner container-fluid d-flex flex-column justify-content-center">
         <div className="row">
           <div className="col-12 col-md-2 order-md-1 order-2  d-flex flex-column justify-content-center">
-            <UserSideNav update={(display)=>this.updateDisplay(display)} user={this.props.user}></UserSideNav>
+            <UserSideNav update={(display)=>this.updateDisplay(display)} user={this.props.user} display={this.state.display}></UserSideNav>
           </div>
           {this.state.display === 'default' ? 
           <div className="col-12 col-md-6 offset-md-2 order-md-2 order-1 d-flex flex-column justify-content-center">
@@ -68,7 +59,6 @@ export class UserDashboard extends Component {
           }
         </div>
       </div>
-      </UserLayout>
     )
   }
 }

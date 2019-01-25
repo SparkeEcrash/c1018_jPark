@@ -61,8 +61,6 @@ export class CollapseCheckbox extends Component {
       newChecked.splice(currentIndex, 1)
     }
 
-    console.log(newChecked);
-
     this.setState({
       checked: newChecked
     }, () => {

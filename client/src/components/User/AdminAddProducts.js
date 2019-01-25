@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 import FormField from '../../components/utils/Form/formfield';
 import { update, generateData, isFormValid, populateOptionFields, resetFields } from '../../components/utils/Form/formActions';
 import FileUpload from '../../components/utils/Form/fileupload';
-import Dialog from '@material-ui/core/Dialog';
 
 import { connect } from 'react-redux';
 import {withAlert} from 'react-alert';
@@ -258,7 +257,7 @@ export class AdminAddProducts extends Component {
     return (
         <form onSubmit={(event)=> this.submitForm(event)}>
           <div className="col-12">
-            <div className="row">
+            <div className="row d-none d-sm-block">
               <div className="col-12 mx-auto">
                 <div className="card">
                   {/* <div className="card-header text-center">
@@ -298,7 +297,7 @@ export class AdminAddProducts extends Component {
                   </div>
                 </div>
               </div>
-              <div className="col-12 col-lg-3 mx-auto">
+              <div className="mt-3 mt-sm-0 col-12 col-lg-3 mx-auto">
                 <div className="card">
                   <div className="card-body">
                     <FormField
@@ -314,7 +313,7 @@ export class AdminAddProducts extends Component {
                   </div>
                 </div>
               </div>
-              <div className="col-12 col-lg-3 mx-auto">
+              <div className="mt-3 mt-sm-0 col-12 col-lg-3 mx-auto">
                 <div className="card">
                   <div className="card-body">
                     <FormField
@@ -330,7 +329,7 @@ export class AdminAddProducts extends Component {
                   </div>
                 </div>
               </div>
-              <div className="col-12 col-lg-3 mx-auto">
+              <div className="mt-3 mt-sm-0 col-12 col-lg-3 mx-auto">
                 <div className="card">
                   <div className="card-body">
                     <FormField

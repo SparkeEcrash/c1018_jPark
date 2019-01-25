@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './HomeBanner.css';
+import './HomeBackground.css';
 
 // change this to carousel
 

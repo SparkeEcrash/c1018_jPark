@@ -126,7 +126,6 @@ export class RegisterForm extends Component {
     if(formIsValid) {
       this.props.dispatch(registerUser(dataToSubmit))
         .then(response=> {
-          console.log(response)
           if(response.success) {
             this.setState({
               formError: false,
@@ -144,7 +143,6 @@ export class RegisterForm extends Component {
 
         
     } else {
-      console.log('Form is invalid');
       this.setState({
         formError: true
       })

@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import {withAlert} from 'react-alert';
 import MyButton from "../utils/button";
-import './prodinfo.css';
 
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import faTruck from "@fortawesome/fontawesome-free-solid/faTruck";

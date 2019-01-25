@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import './LoginForm.css';
 import FormField from '../utils/Form/formfield';
 import MyButton from '../utils/button';
 
@@ -83,7 +82,6 @@ export class LoginForm extends Component {
       })
         
     } else {
-      console.log('it stopped here');
       this.setState({
         formError: true
       })

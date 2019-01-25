@@ -1,6 +1,5 @@
 import React from 'react';
 import RegisterForm from './RegisterForm';
-import './RegisterBanner.css';
 
 function RegisterBanner() {
   return (

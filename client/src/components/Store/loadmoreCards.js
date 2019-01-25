@@ -1,8 +1,6 @@
 import React from 'react';
 import CardBlockShop from '../utils/card_block_shop';
 
-import './loadmoreCards.css';
-
 export default function LoadmoreCards(props) {
   if(props.products !== null) {
     return (

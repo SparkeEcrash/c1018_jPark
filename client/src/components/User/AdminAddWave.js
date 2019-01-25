@@ -7,8 +7,6 @@ import { connect } from 'react-redux';
 import {withAlert} from 'react-alert';
 import { getWaves, addWave } from '../../actions/products_actions';
 
-import './AdminAddWave.css';
-
 export class AdminAddWave extends Component {
 
   state = {
@@ -89,7 +87,7 @@ export class AdminAddWave extends Component {
 
   render() {
     return (
-      <div className="col-5">
+      <div className="col-12 mt-3 col-sm-5 mt-sm-0">
         <div className="card">
         <div className="card-header text-center">
           <div>Wave</div>
