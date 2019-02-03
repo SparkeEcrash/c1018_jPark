@@ -10,7 +10,7 @@ const cloudinary = require('cloudinary');
 require('dotenv').config();
 
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.DATABASE);
+mongoose.connect(process.env.DATABASE_REMOTE);
 
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
