@@ -19,7 +19,8 @@ export class Shop extends Component {
       series: [],
       wave: [], 
       price: []
-    }
+    },
+    grid: 'three-per-row'
   }
 
   componentDidMount() {

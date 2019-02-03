@@ -78,7 +78,7 @@ export class Fileupload extends Component {
     return (
       <div>
         <section>
-          <div className="dropzone clear">
+          <div className="dropzone">
             <Dropzone
               onDrop={(e)=>this.onDrop(e)}
               multiple={false}

@@ -19,14 +19,14 @@ function UserOrderHistory(props) {
   return (
     <div className="history+blocks mt-5 mt-sm-0">
       {props.products.length !== 0 ? 
-      <table className="table table-sm table-striped table-dark text-center">
+      <table className="table table-sm table-responsive-sm table-striped table-dark text-center">
         <thead>
           <tr>
             <th scope="col">Date of purchase</th>
             <th scope="col">Series</th>
             <th scope="col">Name</th>
             <th scope="col">Price</th>
-            <th scope="col">Quantity</th>
+            <th scope="col">Qty</th>
           </tr>
         </thead>
         <tbody>
