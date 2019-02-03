@@ -105,7 +105,7 @@ export class AdminAddWave extends Component {
                 change={(element)=> this.updateForm(element)}
               ></FormField>
               <div className="mt-4 text-center">
-                <button className="btn btn-large text-uppercase" onClick={(event)=>this.submitForm(event)}>
+                <button className="btn text-uppercase" onClick={(event)=>this.submitForm(event)}>
                 Add wave
                 </button>
                 { this.state.formError ?

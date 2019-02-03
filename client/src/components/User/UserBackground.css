@@ -1,6 +1,6 @@
-.user-banner {
+.user_background {
   min-height: calc(100vh - 73.35px);
-  background: url('/img/banner_six.png');
+  background: url('/img/user.png');
   background-position: center;
   background-size: cover;
   background-attachment: fixed;

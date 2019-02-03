@@ -101,7 +101,7 @@ class Header extends Component {
         <li className="nav-item mx-2 cart_link" key={i}>
           {user.cart ? user.cart.length > 0 ? 
           <span id={`checkout-count`} className={`d-none d-sm-block align-text-top text-right ${this.state.color}`}>{user.cart.length}</span> : null : null}
-          <Link onClick={()=>this.updateActive(item.name)} to={item.linkTo} className={classnames(`nav-link nav-link-${item.name.toLowerCase()}`, {[`nav-active-${this.state.color}`]: item.name === active})}>
+          <Link onClick={()=>this.updateActive(item.name)} to={item.linkTo} className={classnames(`nav-link nav-link_${item.name.toLowerCase()}`, {[`nav-active_${this.state.color}`]: item.name === active})}>
             Checkout
           </Link>
         </li>
@@ -109,7 +109,7 @@ class Header extends Component {
     } else {      
       return (
         <li className="nav-item mx-2" key={i} onClick={()=>this.updateActive(item.name)}>
-          <Link onClick={()=>this.updateActive(item.name)} to={item.linkTo} className={classnames(`nav-link nav-link-${item.name.toLowerCase()}`, {[`nav-active-${this.state.color}`]: item.name === active})}>
+          <Link onClick={()=>this.updateActive(item.name)} to={item.linkTo} className={classnames(`nav-link nav-link_${item.name.toLowerCase()}`, {[`nav-active_${this.state.color}`]: item.name === active})}>
             {item.name}
           </Link>
         </li>
@@ -172,7 +172,7 @@ class Header extends Component {
             aria-label="Toggle navigation"
             onClick={()=>{this.toggleNavbar()}}
           >
-            <FontAwesomeIcon icon="bars" />
+            <FontAwesomeIcon icon={['fa', 'bars']} />
           </button>
           <div className={`${classOne}`} id="myNavbar">
             <ul className="navbar-nav mx-auto">

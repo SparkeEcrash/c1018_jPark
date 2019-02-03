@@ -17,7 +17,7 @@ function UserOrderHistory(props) {
   )
 
   return (
-    <div className="history_blocks mt-5 mt-sm-0">
+    <div className="history+blocks mt-5 mt-sm-0">
       {props.products.length !== 0 ? 
       <table className="table table-sm table-striped table-dark text-center">
         <thead>

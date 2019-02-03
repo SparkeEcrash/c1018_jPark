@@ -15,7 +15,6 @@ function checkout_product_block({products, removeItem}) {
     products.cartDetail.map(product=>(
       <div
       key={product._id}>
-        {/* <div className="checkout_product_background mt-3"></div> */}
         <div className="card mt-3">
           <div className="row checkout_product_block">
             <div className="col-12 col-sm-9 checkout_product_info d-flex align-items-center justify-content-around">

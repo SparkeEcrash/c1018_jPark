@@ -141,7 +141,7 @@ export class UserProfileInformation extends Component {
                 </div>
                 :null
             }
-              <button className="btn btn-large text-uppercase contact-btn col-10 col-md-5" onClick={(event)=>this.submitForm(event)}>
+              <button className="btn text-uppercase col-10 col-md-5" onClick={(event)=>this.submitForm(event)}>
                 Update
               </button>
             </div>

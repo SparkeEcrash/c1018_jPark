@@ -79,22 +79,22 @@ body {
   color: var(--mainBlack) !important;
 }
 
-.nav-link-home:hover {
+.nav-link_home:hover {
   font-size: 1.6rem;
   color: var(--mainBlue) !important;
 }
 
-.nav-link-account:hover {
+.nav-link_account:hover {
   font-size: 1.6rem;
   color: var(--mainGreen) !important;
 }
 
-.nav-link-amiibos:hover {
+.nav-link_amiibos:hover {
   font-size: 1.6rem;
   color: var(--mainRed) !important;
 }
 
-.nav-link-checkout:hover {
+.nav-link_checkout:hover {
   font-size: 1.6rem;
   color: var(--mainTurqoise) !important;
 }
@@ -103,27 +103,27 @@ body {
   border-bottom: 0.1rem solid var(--mainGrey);
 }
 
-.nav-active-red {
+.nav-active_red {
   border-bottom: 0.1rem solid var(--mainRed);
 }
 
-.nav-active-green {
+.nav-active_green {
   border-bottom: 0.1rem solid var(--mainGreen);
 }
 
-.nav-active-blue {
+.nav-active_blue {
   border-bottom: 0.1rem solid var(--mainBlue);
 }
 
-.nav-active-turqoise {
+.nav-active_turqoise {
   border-bottom: 0.1rem solid var(--mainTurqoise);
 }
 
-.nav-active-orange {
+.nav-active_orange {
   border-bottom: 0.1rem solid var(--mainOrange);
 }
 
-.nav-active-pink {
+.nav-active_pink {
   border-bottom: 0.1rem solid var(--mainPink);
 }
 
@@ -168,7 +168,7 @@ body {
   background: rgba(0, 0, 0, 0.8);
 }
 
-.footer-title {
+.footer_title {
   border: 0.2rem solid var(--mainYellow);
   padding: 0.4rem;
 }
@@ -183,16 +183,16 @@ body {
 
 /* ############## HOME PAGE ################ */
 
-.text-slanted {
+.text_slanted {
   font-family: "Fredoka One", Sans-Serif;
   color: white;
 }
 
-.text-yellow {
+.text_yellow {
   color: var(--mainYellow)
 }
 
-.btn-yellow {
+.btn_yellow {
   background: var(--mainYellow);
   text-transform: capitalize;
   font-size: 1.2rem;
@@ -200,7 +200,7 @@ body {
   border-radius: 0!important
 }
 
-.btn-yellow:hover {
+.btn_yellow:hover {
   background: var(--mainBlack);
   color: var(--mainYellow);
 }
@@ -491,15 +491,6 @@ body {
 }
 
 /* ############## CHECKOUT ################ */
-
-.checkout-banner {
-  min-height: calc(100vh - 73.35px);
-  background: url('/img/amiibo_two.jpg');
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-}
 
 .cart_no_items svg ,
 .cart_success svg {

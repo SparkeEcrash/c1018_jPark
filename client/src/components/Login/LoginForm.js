@@ -91,7 +91,7 @@ export class LoginForm extends Component {
 
   render() {
     return (
-      <div className="login container">
+      <div className="container">
         <div className="row">
           <div className="col-10 col-lg-6 mx-auto">
             <div className="card">
@@ -107,8 +107,8 @@ export class LoginForm extends Component {
                     <FormField id={'password'} formdata={this.state.formdata.password} change={(element) => this.updateForm(element)}></FormField>
                   </div>
                   <div className="form-row align-items-center d-flex justify-content-around">
-                    <button  onClick={(event)=>this.submitForm(event)} className="btn btn-large text-uppercase contact-btn col-5">Log in</button>
-                    <div className="btn btn-large text-uppercase contact-btn col-5">
+                    <button  onClick={(event)=>this.submitForm(event)} className="btn text-uppercase col-5">Log in</button>
+                    <div className="btn text-uppercase col-5">
                       <MyButton 
                         type="default" 
                         title="Sign up" 

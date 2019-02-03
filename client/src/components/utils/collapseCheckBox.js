@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import faAngleDown from '@fortawesome/fontawesome-free-solid/faAngleDown';
-import faAngleUp from '@fortawesome/fontawesome-free-solid/faAngleUp';
 
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -31,9 +29,10 @@ export class CollapseCheckbox extends Component {
 
   handleAngle = () => (
     this.state.open ?
-    <FontAwesomeIcon icon={faAngleUp} className="icon"/>
+    // <FontAwesomeIcon icon={faAngleUp} className="icon"/>
+    <FontAwesomeIcon icon={['fa', 'angle-up']} className="icon"/>
     :
-    <FontAwesomeIcon icon={faAngleDown} className="icon"/>
+    <FontAwesomeIcon icon={['fa', 'angle-down']} className="icon"/>
   )
 
   renderList = () => (
@@ -51,7 +50,7 @@ export class CollapseCheckbox extends Component {
       null
   )
 
-  handleToggle = value => (something) => {
+  handleToggle = value => (variablefromCheckboxImport) => {
     const { checked } = this.state;
     const currentIndex = checked.indexOf(value)
     const newChecked = [...checked]

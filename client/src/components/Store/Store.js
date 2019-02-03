@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import TopBorder from './TopBorder';
+import TopBorder from './BrowseBorder';
 import {price} from '../utils/Form/fixed_categories';
 
 import {connect} from 'react-redux';

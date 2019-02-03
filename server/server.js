@@ -6,7 +6,6 @@ const cors = require('cors');
 const app = express();
 const mongoose = require('mongoose');
 const cloudinary = require('cloudinary');
-const async = require('async');
 
 require('dotenv').config();
 

@@ -1,6 +1,6 @@
-.single_product_background {
+.register_background {
   min-height: calc(100vh - 73.35px);
-  background: url('/img/single_product.png');
+  background: url('/img/login.jpg');
   background-position: center;
   background-size: cover;
   background-attachment: fixed;

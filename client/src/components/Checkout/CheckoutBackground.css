@@ -1,6 +1,6 @@
-.register-banner {
+.checkout_background {
   min-height: calc(100vh - 73.35px);
-  background: url('/img/background_two.jpg');
+  background: url('/img/checkout.jpg');
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
