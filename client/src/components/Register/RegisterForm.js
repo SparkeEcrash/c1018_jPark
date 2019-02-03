@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import './RegisterForm.css';
 
 import FormField from '../utils/Form/formfield';
 import { update, generateData, isFormValid } from '../utils/Form/formActions';
@@ -151,7 +150,7 @@ export class RegisterForm extends Component {
 
   render() {
     return (
-      <div className="register container">
+      <div className="container">
         <div className="row">
           <div className="col-10 col-lg-6 mx-auto">
             <div className="card">
@@ -181,7 +180,7 @@ export class RegisterForm extends Component {
                         Please check your data
                       </div>
                       : null}
-                    <button className="btn btn-large text-uppercase contact-btn col-10 col-md-5" onClick={(event)=>this.submitForm(event)}>
+                    <button className="btn text-uppercase col-10 col-md-5" onClick={(event)=>this.submitForm(event)}>
                       Create an Account
                     </button>
                   </div>

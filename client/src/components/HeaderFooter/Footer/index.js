@@ -7,7 +7,7 @@ const Footer = () => {
 			<div className="container">
 				<div className="row">
 					<div className="col-10 mx-auto text-center">
-						<h1 className="text-uppercase font-weight-bold text-yellow footer-title text-center d-inline-block">
+						<h1 className="text-uppercase font-weight-bold text_yellow footer_title text-center d-inline-block">
 							contact us
 						</h1>
 						<div className="footer-icons my-5 d-flex justify-content-center">

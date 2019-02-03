@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import CheckoutProductBlock from '../utils/User/checkout_product_block';
+import './CheckoutBackground.css';
 
 import { connect } from 'react-redux';
 import { getCartItems, removeCartItem, onSuccessBuy } from '../../actions/user_actions';
@@ -89,7 +90,7 @@ export class Checkout extends Component {
   }
 
   showNoItemMessage = () => (
-    <div className="checkout-empty-banner container d-flex justify-content-center align-items-center">
+    <div className="checkout+empty+banner container d-flex justify-content-center align-items-center">
       <div className="col-12 col-sm-8">
         <div className="card">
           <div className="row user_cart_empty d-flex justify-content-around align-items-center">
@@ -106,7 +107,7 @@ export class Checkout extends Component {
   )
 
   showSuccessMessage = () => (
-    <div className="checkout-empty-banner container d-flex justify-content-center align-items-center">
+    <div className="checkout+empty+banner container d-flex justify-content-center align-items-center">
       <div className="col-12 col-sm-8">
         <div className="card">
           <div className="row user_cart_empty d-flex justify-content-around align-items-center">
@@ -124,7 +125,7 @@ export class Checkout extends Component {
 
   render() {
     return (
-      <div className="checkout-banner container-fluid d-flex justify-content-center align-items-center">
+      <div className="checkout_background container-fluid d-flex justify-content-center align-items-center">
         { this.state.showTotal ? 
         <div className="col-12 col-sm-8">
           <CheckoutProductBlock

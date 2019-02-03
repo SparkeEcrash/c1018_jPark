@@ -257,12 +257,9 @@ export class AdminAddProducts extends Component {
     return (
         <form onSubmit={(event)=> this.submitForm(event)}>
           <div className="col-12">
-            <div className="row d-none d-sm-block">
+            <div className="row mt-3 mt-sm-0">
               <div className="col-12 mx-auto">
                 <div className="card">
-                  {/* <div className="card-header text-center">
-                    Add Amiibo
-                  </div> */}
                   <div className="card-body">
                     <FileUpload
                       imagesHandler={(images)=>this.imagesHandler(images)} reset={this.state.formSuccess}

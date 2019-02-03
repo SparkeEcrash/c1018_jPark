@@ -30,7 +30,7 @@ export class SingleProduct extends Component {
 
   render() {
     return (
-      <div className="single-product-background d-flex flex-column justify-content-center">
+      <div className="single_product_background d-flex flex-column justify-content-center">
         {/* <TopBorder title='Amiibo Detail'></TopBorder> */}
         <div className="product_detail_wrapper container">
         {

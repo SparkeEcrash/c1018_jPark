@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import './AccountBackground.css'
+import './UserBackground.css'
 
 import UserSideNav from './UserSideNav';
 import UserProfile from './UserProfile';
@@ -22,7 +22,7 @@ export class UserDashboard extends Component {
 
   render() {
     return (
-      <div className="user-banner container-fluid d-flex flex-column justify-content-center">
+      <div className="user_background container-fluid d-flex flex-column justify-content-center">
         <div className="row">
           <div className="col-12 col-md-2 order-md-1 order-2  d-flex flex-column justify-content-center">
             <UserSideNav update={(display)=>this.updateDisplay(display)} user={this.props.user} display={this.state.display}></UserSideNav>

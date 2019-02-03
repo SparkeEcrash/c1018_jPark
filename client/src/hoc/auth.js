@@ -35,7 +35,7 @@ export default function(ComposedClass, reload, adminRoute = null) {
     if(this.state.loading) {
       return (
         <div className="main_loader d-flex flex-column justify-content-center">
-          <CircularProgress className="mx-auto spin" style={{color:'#2196F3'}} thickness={8}/>
+          <CircularProgress className="mx-auto spin" style={{color:'#009BEB'}} thickness={8}/>
         </div>
       )
     }

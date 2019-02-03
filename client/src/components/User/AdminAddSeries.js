@@ -106,7 +106,7 @@ export class AdminAddSeries extends Component {
                 change={(element)=> this.updateForm(element)}
               ></FormField>
               <div className="text-center mt-4">
-              <button className="btn btn-large text-uppercase" onClick={(event)=>this.submitForm(event)}>
+              <button className="btn text-uppercase" onClick={(event)=>this.submitForm(event)}>
                 Add series
               </button>
                 { this.state.formError ?

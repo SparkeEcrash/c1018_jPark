@@ -6,12 +6,11 @@ const cors = require('cors');
 const app = express();
 const mongoose = require('mongoose');
 const cloudinary = require('cloudinary');
-const async = require('async');
 
 require('dotenv').config();
 
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.DATABASE);
+mongoose.connect(process.env.DATABASE_REMOTE);
 
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
