@@ -50,6 +50,7 @@ class Card extends Component {
   }
 
   render() {
+    console.log(this.props);
     const props = this.props; 
     let user = props.user.userData;
     return (

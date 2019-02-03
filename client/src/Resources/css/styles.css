@@ -53,14 +53,12 @@ body {
 .spin{
   margin-bottom: 73.35px;
 }
-/* auth spin end */
 
 /* ############## MODAL ################ */
 .dialog_alert {
   padding: 51px;
   font-size: 30px;
 }
-/* modal end */
 
 /* ############## LAYOUT ################ */
 
@@ -183,8 +181,6 @@ body {
   color: var(--mainWhite);
 }
 
-/* layout end*/
-
 /* ############## HOME PAGE ################ */
 
 .text-slanted {
@@ -208,7 +204,6 @@ body {
   background: var(--mainBlack);
   color: var(--mainYellow);
 }
-/* homepage end*/
 
 /* ############## ACCOUNT PAGE ################ */
 
@@ -339,8 +334,6 @@ body {
   background-position: center center !important;
 }
 
-/* account end*/
-
 /* ############## AMIIBOS PAGE ################ */
 
 .load_more_container span {
@@ -456,8 +449,6 @@ body {
   padding: 10vh 0;
 }
 
-/* amiibo end */
-
 /* ############## SINGLE PRODUCT ################ */
 
 .prod_info {
@@ -498,9 +489,6 @@ body {
   float: left;
   border: 8px solid black;
 }
-
-
-/* single product end */
 
 /* ############## CHECKOUT ################ */
 
@@ -544,5 +532,3 @@ body {
 .checkout_remove:hover {
   color: red;
 }
-
-/* checkout end */

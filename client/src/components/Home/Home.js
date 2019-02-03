@@ -3,7 +3,7 @@ import './HomeBackground.css';
 
 // change this to carousel
 
-export class HomeBanner extends Component {
+export class Home extends Component {
   render() {
     return (
       <div className="home-banner d-flex flex-row-reverse align-items-baseline align-items-sm-center pr-3 pr-sm-5 pt-3 pt-sm-0">
@@ -19,6 +19,6 @@ export class HomeBanner extends Component {
   }
 }
 
-export default HomeBanner;
+export default Home;
 
 
