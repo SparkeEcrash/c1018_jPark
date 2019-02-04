@@ -2,12 +2,10 @@ import React, { Component } from 'react';
 import ProdInfo from './prodinfo';
 import ProdImg from './prodimg';
 import {withAlert} from 'react-alert';
-import {confirmAlert} from 'react-confirm-alert';
-import 'react-confirm-alert/src/react-confirm-alert.css';
 
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { addToCart } from '../../actions/user_actions';
-import { deleteProduct } from '../../actions/products_actions';
 import { getProductDetail, clearProductDetail } from '../../actions/products_actions';
 
 import './SingleProduct.css';
@@ -32,40 +30,8 @@ export class SingleProduct extends Component {
     this.props.dispatch(addToCart(id))
   }
 
-  deleteAmiiboHandler(id) {
-    const name = this.props.products.prodDetail.name;
-    confirmAlert({
-      title: 'Confirm to delete',
-      message: `Are you sure you want to delete ${name}`,
-      buttons: [
-        {
-          label: 'Yes',
-          onClick: () => {
-            this.props.dispatch(deleteProduct(id)).then(()=> {
-              if(this.props.products.deleteProduct.success) {
-                this.props.alert.show(`${name} deleted`)
-              } else {
-                this.props.alert.show(`There was an error and delete failed`)
-              }      
-            })
-          }
-        },
-        {
-          label: 'No',
-          onClick: () => {
-            this.props.alert.show(`${name} was not deleted`)
-          }
-        }
-      ]
-    })
-
-    // this.props.dispatch(deleteProduct(id)).then(()=> {
-    //   if(this.props.products.deleteProduct.success) {
-    //     this.props.alert.show(`${this.props.products.prodDetail.name} deleted`)
-    //   } else {
-    //     this.props.alert.show(`${this.props.products.prodDetail.name} could not be deleted`)
-    //   }      
-    // })
+  editAmiiboHandler(id) {
+    this.props.history.push(`/product_edit/${id}`);
   }
 
   render() {
@@ -84,7 +50,7 @@ export class SingleProduct extends Component {
               <ProdInfo
                 detail={this.props.products.prodDetail}
                 addToCart={(id)=>this.addToCartHandler(id)}
-                deleteAmiibo={(id)=>this.deleteAmiiboHandler(id)}
+                editAmiibo={(id)=>this.editAmiiboHandler(id)}
               />
             </div>
           </div>
@@ -100,5 +66,5 @@ const mapStateToProps = (state) => ({
   products: state.products
 })
 
-export default connect(mapStateToProps)(withAlert(SingleProduct));
+export default connect(mapStateToProps)(withRouter(withAlert(SingleProduct)));
 

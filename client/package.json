@@ -19,7 +19,6 @@
     "react": "^16.7.0",
     "react-alert": "^4.0.4",
     "react-alert-template-basic": "^1.0.0",
-    "react-confirm-alert": "^2.1.0",
     "react-dom": "^16.7.0",
     "react-dropzone": "^4.2.12",
     "react-images": "^0.5.19",

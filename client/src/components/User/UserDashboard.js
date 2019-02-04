@@ -47,7 +47,7 @@ export class UserDashboard extends Component {
           }
           {this.state.display === 'add_products' ?
             <div className="col-12 col-md-10 order-md-2 order-1 d-flex flex-column justify-content-center">
-              <AdminAddProducts className="d-none" user={this.props.user}></AdminAddProducts>
+              <AdminAddProducts></AdminAddProducts>
             </div>
           : null
           }

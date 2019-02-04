@@ -414,7 +414,8 @@ body {
 .bag_link,
 .add_to_cart_link,
 .add_amiibo_link,
-.delete_amiibo_link {
+.delete_amiibo_link,
+.edit_amiibo_link {
     width: 100%;
     border: 1px solid var(--mainGrey);
     padding: 5px 10px;
@@ -432,13 +433,18 @@ body {
 .bag_link:hover,
 .add_to_cart_link:hover,
 .add_amiibo_link:hover,
-.delete_amiibo_link:hover {
+.delete_amiibo_link:hover,
+.edit_amiibo_link:hover {
     background: var(--mainGrey);
     color: white;
     text-decoration: none;
 }
 
 .add_to_cart_link svg {
+  margin-right: 10px;
+}
+
+.edit_amiibo_link svg {
   margin-right: 10px;
 }
 

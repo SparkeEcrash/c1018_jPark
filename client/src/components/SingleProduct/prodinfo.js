@@ -54,11 +54,11 @@ export class ProdInfo extends Component {
     />
   )
 
-  showAdminDelete = (detail) => (
+  showAdminEdit = (detail) => (
     <MyButton
-      type="delete_amiibo_link"     
+      type="edit_amiibo_link"     
       runAction={()=>{
-        this.props.deleteAmiibo(detail._id);
+        this.props.editAmiibo(detail._id);
       }}
     />
   )
@@ -90,14 +90,14 @@ export class ProdInfo extends Component {
         <li className="list-group-item">{ this.showProdSeries(detail) } </li>
         <li className="list-group-item">{ this.showProdWave(detail) } </li>
         {user.isAuth ? 
-        <Fragment>
           <li className="list-group-item">        
             {this.showProdActions(detail)}
           </li>
+        :null}
+        {user.isAdmin ?
           <li className="list-group-item">
-            {this.showAdminDelete(detail)}
+            {this.showAdminEdit(detail)}
           </li>
-        </Fragment>
         :null}
       </ul>
     </div>
