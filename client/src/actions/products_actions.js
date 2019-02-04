@@ -8,7 +8,8 @@ import {
   GET_PRODUCT_DETAIL,
   CLEAR_PRODUCT_DETAIL,
   ADD_PRODUCT,
-  CLEAR_PRODUCT
+  CLEAR_PRODUCT,
+  DELETE_PRODUCT
 } from './types';
 
 import { PRODUCT_SERVER } from '../components/utils/misc';
@@ -82,6 +83,17 @@ export function addProduct(datatoSubmit){
 
     return {
       type: ADD_PRODUCT,
+      payload: request
+    }
+}
+
+export function deleteProduct(datatoSubmit){
+  console.log(datatoSubmit);
+  const request = axios.delete(`${PRODUCT_SERVER}/article`, {data: {id: datatoSubmit}})
+    .then(response => response.data);
+
+    return {
+      type: DELETE_PRODUCT,
       payload: request
     }
 }

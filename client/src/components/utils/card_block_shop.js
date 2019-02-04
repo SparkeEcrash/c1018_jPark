@@ -9,6 +9,7 @@ export default function CardBlockShop(props) {
                 key={card._id}
                 {...card}
                 grid={props.grid}
+                delete={props.delete}
             />
         ))
     :null
@@ -26,7 +27,7 @@ export default function CardBlockShop(props) {
               : null
           :
           null}
-          {renderCards(props.list)}
+          {renderCards()}
         </div>
 
       </div>

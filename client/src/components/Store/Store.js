@@ -35,6 +35,14 @@ export class Shop extends Component {
     ))
   }
 
+  handleDelete = () => {
+    this.props.dispatch(getProductsToShop(
+      0,
+      this.state.skip + this.state.limit,
+      this.state.filters
+    ))
+  }
+
   handlePrice = (value) => {
     const data = price;
     let array = [];
@@ -117,6 +125,7 @@ export class Shop extends Component {
             <div className="col-12 col-md-9 col-xl-10 order-md-2 order-1 d-flex flex-column">
               <div>
                 <LoadmoreCards
+                  delete={this.handleDelete}
                   grid={this.state.grid}
                   limit={this.state.limit}
                   size={products.toShopSize}

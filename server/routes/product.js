@@ -20,8 +20,8 @@ mongoose.connect(process.env.DATABASE);
 |--------------------------------------------------
 */
 router.post('/api/product/shop',(req,res) => {
-  let order = req.body.order ? req.body.order: 'desc';
-  let sortBy = req.body.sortBy ? req.body.sortBy : "_id";
+  let order = req.body.order ? req.body.order: 'asc';
+  let sortBy = req.body.sortBy ? req.body.sortBy : "name";
   let limit = req.body.limit ? parseInt(req.body.limit) : 100;
   let skip = parseInt(req.body.skip);
   let findArgs = {};
@@ -104,6 +104,17 @@ router.post('/api/product/article', auth, admin, (req, res)=> {
       article: doc
     })
   })
+})
+
+router.delete('/api/product/article', auth, admin, (req, res)=> {
+  console.log(req.body)
+  Amiibo.findById(req.body.id)
+    .then(amiibo => {
+      amiibo.remove().then(() => res.json({ success: true }));
+    })
+    .catch(err => {
+      res.status(404).json({ success: false, err})
+    });
 })
 
 /**

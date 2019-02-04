@@ -1,24 +1,48 @@
 import React, { Component } from 'react';
 import MyButton from '../utils/button';
 import { withRouter } from 'react-router-dom';
+import { withAlert } from 'react-alert';
 
+import axios from 'axios';
 import { connect } from 'react-redux';
 import { addToCart } from '../../actions/user_actions';
+import { deleteProduct } from '../../actions/products_actions';
 
 import Dialog from '@material-ui/core/Dialog';
 
 class Card extends Component {
 
   state = {
-    open: false
+    open: false,
+    mode: ''
   };
 
-  handleClickOpen = () => {
-    this.setState({ open: true });
+  handleClickOpen = (mode) => {
+    this.setState({ 
+      open: true,
+      mode: mode });
   }
 
   handleClose = () => {
-    this.setState({ open: false })
+    this.setState({ 
+      open: false,
+      mode: '' });
+  }
+
+  handleDeleteAmiibo = (props) => {
+    this.props.dispatch(deleteProduct(props._id)).then(()=> {
+      if(this.props.products.deleteProduct.success) {
+        this.props.delete();
+        props.images.map(image => this.onRemove(image.public_id));
+      } else {
+        this.props.alert.show(`There was an error and delete failed`)
+      }      
+    });
+    this.handleClose();
+  }
+
+  onRemove = id => {
+    axios.get(`/api/user/removeimage?public_id=${id}`)
   }
 
   generateRandomColor = () => {
@@ -91,25 +115,49 @@ class Card extends Component {
             type="bag_link"
             runAction={()=> {
               this.props.dispatch(addToCart(props._id))
-              this.handleClickOpen()
+              this.handleClickOpen('add_to_cart')
             }}
             />
             : null}
-            <div className="button_wrap">
-
-            </div>
+            {user.isAdmin ?
+            <MyButton
+            type="delete_amiibo_link"
+            runAction={()=> {
+              // this.props.dispatch(deleteProduct(props._id))
+              this.handleClickOpen('delete_amiibo')
+            }}
+            />
+            : null}
           </div>
         </div>
         <Dialog
           open={this.state.open}
           onClose={this.handleClose}
         >
+        {this.state.mode === 'add_to_cart' ? 
           <div className="dialog_alert text-center">
             <h1>Amiibo Added</h1>
             <h3>
               Make sure you check out!
             </h3>
           </div>
+        : null}
+        {this.state.mode === 'delete_amiibo' ? 
+          <div className="dialog_alert text-center">
+            <h1>Confirmation</h1>
+            <h3>
+              Are you sure you want to delete {props.name}?
+            </h3>
+            <div className="row delete_confirm justify-content-around">
+              <div className="yes" onClick= {() => {this.handleDeleteAmiibo(props)}}>
+                Yes
+              </div>
+              <div className="no" onClick={()=> {this.handleClose()}}>
+                No
+              </div>
+            </div>
+          </div>
+        : null}
         </Dialog>
       </div>
       );
@@ -117,8 +165,9 @@ class Card extends Component {
 }
 
 const mapStateToProps = (state) => ({
-    user: state.user
+    user: state.user,
+    products: state.products
 })
 
-export default connect(mapStateToProps)(withRouter(Card));
+export default connect(mapStateToProps)(withRouter(withAlert(Card)));
 

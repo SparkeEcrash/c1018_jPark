@@ -100,8 +100,8 @@ router.post('/api/user/uploadimage', auth, admin, formidable(), (req, res)=> {
       url: result.url
     })
   }, {
-    public_id: `${Date.now()}`,
-    // public_id: `gityo_amiibo/${Date.now()}`,
+    // public_id: `${Date.now()}`,
+    public_id: `gityo_amiibo/${Date.now()}`,
     overwrite: true,
     resource_type: 'auto'
   })

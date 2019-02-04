@@ -9,10 +9,11 @@ export default function LoadmoreCards(props) {
           <CardBlockShop
             grid={props.grid}
             list={props.products}
+            delete={props.delete}
           />
         </div>
         {
-          props.size > 0 && props.size >= props.limit ?
+          props.size > 0 && props.size === props.limit ?
           <div className="load_more_container mt-4 mb-5">
             <span onClick={() => props.loadMore()}>
               Load More

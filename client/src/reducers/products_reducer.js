@@ -7,13 +7,16 @@ import {
   GET_PRODUCT_DETAIL,
   CLEAR_PRODUCT_DETAIL,
   ADD_PRODUCT,
-  CLEAR_PRODUCT
+  CLEAR_PRODUCT,
+  DELETE_PRODUCT
 } from '../actions/types';
 
 export default function(state={}, action) {
   switch(action.type){
     case ADD_PRODUCT:
       return {...state, addProduct: action.payload}
+    case DELETE_PRODUCT:
+      return {...state, deleteProduct: action.payload}
     case CLEAR_PRODUCT:
       return {...state, addProduct: action.payload}
     case GET_PRODUCTS_TO_SHOP:
