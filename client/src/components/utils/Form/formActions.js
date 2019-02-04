@@ -54,6 +54,10 @@ export const generateData = (formdata, formName) => {
     {
       dataToSubmit[key] = formdata[key].value;
     }
+    if(key === 'images')
+    {
+      dataToSubmit[key] = formdata[key].pictures;
+    }
   }
 
   return dataToSubmit 
@@ -87,7 +91,7 @@ export const resetFields = (formdata, formname) => {
   const newFormdata = {...formdata};
   for(let key in newFormdata){
     if(key === 'images'){
-      newFormdata[key].value = [];
+      newFormdata[key].pictures = [];
       newFormdata[key].valid = true;
     } else {
       newFormdata[key].value='';
@@ -109,4 +113,19 @@ export const populateFields = (formData, fields) => {
   }
 
   return formData;
+}
+
+export const validateFields = (formData) => {
+  for (let key in formData) {
+    formData[key].valid = true;
+  }
+}
+
+export const isEmpty = value => {
+  return (
+    value === undefined ||
+    value === null ||
+    (typeof value === 'object' && Object.keys(value).length === 0) ||
+    (typeof value === 'string' && value.trim().length === 0)
+  );
 }

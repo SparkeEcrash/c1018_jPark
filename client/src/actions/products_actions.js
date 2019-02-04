@@ -88,7 +88,6 @@ export function addProduct(datatoSubmit){
 }
 
 export function deleteProduct(datatoSubmit){
-  console.log(datatoSubmit);
   const request = axios.delete(`${PRODUCT_SERVER}/article`, {data: {id: datatoSubmit}})
     .then(response => response.data);
 

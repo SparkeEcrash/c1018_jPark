@@ -52,7 +52,6 @@ class Header extends Component {
   }
 
   toggleNavbar = () => {
-    console.log('hello');
     this.setState({
       collapsed: !this.state.collapsed
     })

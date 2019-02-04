@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
+import { withRouter } from 'react-router-dom';
 
 import FormField from '../../../components/utils/Form/formfield';
-import { update, generateData, isFormValid, populateOptionFields, resetFields } from '../../../components/utils/Form/formActions';
+import { update, generateData, isFormValid, populateOptionFields, resetFields, validateFields, isEmpty } from '../../../components/utils/Form/formActions';
 import FileUpload from '../../../components/utils/Form/fileupload';
 
 import { connect } from 'react-redux';
 import {withAlert} from 'react-alert';
-import { getSeries, getWaves, addProduct, clearProduct } from
+import { getSeries, getWaves, addProduct, clearProduct, getProductDetail, clearProductDetail } from
 '../../../actions/products_actions';
 
 export class productForm extends Component {
@@ -163,7 +164,7 @@ export class productForm extends Component {
         showlabel: true
       },
       images: {
-        values: [],
+        pictures: [],
         validation: {
           required: false
         },
@@ -225,6 +226,15 @@ export class productForm extends Component {
         formError: true
       })
     }
+  } 
+
+  editProduct = (event) => {
+    event.preventDefault(); 
+    let dataToSubmit = generateData(this.state.formdata, 'products');
+    let formIsValid = isFormValid(this.state.formdata, 'products');
+    if(formIsValid) {
+      console.log(dataToSubmit);
+    }
   }
 
   componentDidMount() {
@@ -237,6 +247,60 @@ export class productForm extends Component {
       const newFormData = populateOptionFields(formdata, this.props.products.waves, 'wave');
       this.updateFields(newFormData);
     })
+    if(this.props.action === 'edit') {
+      const id = this.props.product_id;
+      this.props.dispatch(getProductDetail(id)).then(response => {
+        if(!this.props.products.prodDetail){
+        this.props.history.push('/store')
+        }
+      });
+
+      validateFields(this.state.formdata);
+
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if(nextProps.products.prodDetail) {
+      const prodDetail = nextProps.products.prodDetail;
+      prodDetail._id = !isEmpty(prodDetail._id) ? prodDetail._id: '';
+      prodDetail.name = !isEmpty(prodDetail.name) ? prodDetail.name: '';
+      prodDetail.images = !isEmpty(prodDetail.images) ? prodDetail.images: [];
+      prodDetail.description = !isEmpty(prodDetail.description) ? prodDetail.description: '';
+      prodDetail.series = !isEmpty(prodDetail.series) ? prodDetail.series: {};
+      prodDetail.wave = !isEmpty(prodDetail.wave) ? prodDetail.wave: {};
+      prodDetail.price = !isEmpty(prodDetail.price) ? prodDetail.price: '';
+      prodDetail.shipping = !isEmpty(prodDetail.shipping) ? prodDetail.shipping: '';
+      prodDetail.available = !isEmpty(prodDetail.available) ? prodDetail.available: '';
+      prodDetail.publish = !isEmpty(prodDetail.publish) ? prodDetail.publish: '';
+
+      const newFormData = {
+        ...this.state.formdata
+      }
+
+      newFormData['name'].value = prodDetail.name;
+      newFormData['images'].pictures = prodDetail.images;
+      newFormData['description'].value = prodDetail.description;
+      newFormData['price'].value = prodDetail.price;
+      newFormData['series'].value = prodDetail.series._id;
+      newFormData['wave'].value = prodDetail.wave._id;
+      newFormData['available'].value = prodDetail.available;
+      newFormData['shipping'].value = prodDetail.shipping;
+      newFormData['publish'].value = prodDetail.publish;
+
+      this.setState({
+        formdata: newFormData
+      })
+    }
+    console.log(this.state)
+  }
+
+  componentWillUnmount() {
+    const newFormData = resetFields(this.state.formdata, 'products');
+    this.setState({
+      formdata: newFormData,
+    });
+    this.props.dispatch(clearProductDetail());
   }
 
   imagesHandler = images => {
@@ -244,7 +308,7 @@ export class productForm extends Component {
       ...this.state.formdata
     }
 
-    newFormData['images'].value = images;
+    newFormData['images'].pictures = images;
     newFormData['images'].valid = true;
 
     this.setState({
@@ -262,9 +326,18 @@ export class productForm extends Component {
               Add Amiibo
             </div> 
           </div>
-      )
-    default: 
-    return null;
+        )
+      case 'edit':
+        return (
+          <div>
+            <label htmlFor={'edit_amibo'}>Edit</label>
+            <div id={'edit_amiibo'} className="edit_amiibo_link mb-2" onClick={(event)=>this.editProduct(event)}>
+              Edit Amiibo
+            </div> 
+          </div>
+        )
+      default: 
+        return null;
   }
 }
 
@@ -277,7 +350,7 @@ export class productForm extends Component {
                 <div className="card">
                   <div className="card-body">
                     <FileUpload
-                      imagesHandler={(images)=>this.imagesHandler(images)} reset={this.state.formSuccess}
+                      images = {this.state.formdata.images.pictures} imagesHandler={(images)=>this.imagesHandler(images)} reset={this.state.formSuccess}
                     ></FileUpload>
                     <FormField
                       id={'description'}
@@ -371,4 +444,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(withAlert(productForm));
+export default connect(mapStateToProps)(withRouter(withAlert(productForm)));
