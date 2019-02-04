@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Fragment, Component } from 'react'
 import { connect } from 'react-redux';
 import {withAlert} from 'react-alert';
 import MyButton from "../utils/button";
@@ -45,13 +45,22 @@ export class ProdInfo extends Component {
   )
 
   showProdActions = (detail) => (
-        <MyButton
-          type="add_to_cart_link"
-          runAction={()=>{
-            this.props.addToCart(detail._id);
-            this.props.alert.show(`You added ${detail.name}!`)
-          }}
-        />
+    <MyButton
+      type="add_to_cart_link"
+      runAction={()=>{
+        this.props.addToCart(detail._id);
+        this.props.alert.show(`You added ${detail.name}!`)
+      }}
+    />
+  )
+
+  showAdminEdit = (detail) => (
+    <MyButton
+      type="edit_amiibo_link"     
+      runAction={()=>{
+        this.props.editAmiibo(detail._id);
+      }}
+    />
   )
 
   showProdCost = (detail) => (
@@ -81,9 +90,14 @@ export class ProdInfo extends Component {
         <li className="list-group-item">{ this.showProdSeries(detail) } </li>
         <li className="list-group-item">{ this.showProdWave(detail) } </li>
         {user.isAuth ? 
-        <li className="list-group-item">        
-          {this.showProdActions(detail)}
-        </li>
+          <li className="list-group-item">        
+            {this.showProdActions(detail)}
+          </li>
+        :null}
+        {user.isAdmin ?
+          <li className="list-group-item">
+            {this.showAdminEdit(detail)}
+          </li>
         :null}
       </ul>
     </div>

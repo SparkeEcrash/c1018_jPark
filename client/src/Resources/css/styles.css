@@ -60,6 +60,14 @@ body {
   font-size: 30px;
 }
 
+.dialog_alert .delete_confirm .yes:hover {
+  color: var(--mainRed);
+}
+
+.dialog_alert .delete_confirm .no:hover {
+  color: var(--mainBlue);
+}
+
 /* ############## LAYOUT ################ */
 
 .navbar-toggler {
@@ -405,7 +413,9 @@ body {
 .card_link,
 .bag_link,
 .add_to_cart_link,
-.add_amiibo_link {
+.add_amiibo_link,
+.delete_amiibo_link,
+.edit_amiibo_link {
     width: 100%;
     border: 1px solid var(--mainGrey);
     padding: 5px 10px;
@@ -422,13 +432,19 @@ body {
 .card_link:hover,
 .bag_link:hover,
 .add_to_cart_link:hover,
-.add_amiibo_link:hover {
+.add_amiibo_link:hover,
+.delete_amiibo_link:hover,
+.edit_amiibo_link:hover {
     background: var(--mainGrey);
     color: white;
     text-decoration: none;
 }
 
 .add_to_cart_link svg {
+  margin-right: 10px;
+}
+
+.edit_amiibo_link svg {
   margin-right: 10px;
 }
 
@@ -439,6 +455,11 @@ body {
 
 .card_item_wrapper .actions .button_wrap:nth-child(1) {
   flex-grow: 1;
+  padding-right: 10px;
+}
+
+.card_item_wrapper .actions :nth-child(2) {
+  flex-grow: 0;
   padding-right: 10px;
 }
 

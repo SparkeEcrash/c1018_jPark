@@ -10,8 +10,8 @@ import SingleProduct from './components/SingleProduct';
 import Store from './components/Store';
 import Login from './components/Login';
 import Register from './components/Register/Register';
-
 import UserDashboard from './components/User/UserDashboard';
+import EditProduct from './components/EditProduct'; 
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
@@ -77,6 +77,7 @@ const Routes = () => {
         <Route path="/login" exact component={Auth(Login, false)} /> 
         <Route path="/register" exact component={Auth(Register, false)} />
         <Route path="/user/dashboard" exact component={Auth(UserDashboard, true)} /> 
+        <Route path="/product_edit/:id" exact component={Auth(EditProduct, true, true)} />
       </Switch>
     </Layout>
   );

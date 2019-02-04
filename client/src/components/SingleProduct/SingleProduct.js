@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import ProdInfo from './prodinfo';
 import ProdImg from './prodimg';
+import {withAlert} from 'react-alert';
 
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { addToCart } from '../../actions/user_actions';
 import { getProductDetail, clearProductDetail } from '../../actions/products_actions';
 
@@ -28,6 +30,10 @@ export class SingleProduct extends Component {
     this.props.dispatch(addToCart(id))
   }
 
+  editAmiiboHandler(id) {
+    this.props.history.push(`/product_edit/${id}`);
+  }
+
   render() {
     return (
       <div className="single_product_background d-flex flex-column justify-content-center">
@@ -44,6 +50,7 @@ export class SingleProduct extends Component {
               <ProdInfo
                 detail={this.props.products.prodDetail}
                 addToCart={(id)=>this.addToCartHandler(id)}
+                editAmiibo={(id)=>this.editAmiiboHandler(id)}
               />
             </div>
           </div>
@@ -59,5 +66,5 @@ const mapStateToProps = (state) => ({
   products: state.products
 })
 
-export default connect(mapStateToProps)(SingleProduct);
+export default connect(mapStateToProps)(withRouter(withAlert(SingleProduct)));
 

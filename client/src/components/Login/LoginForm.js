@@ -119,7 +119,7 @@ export class LoginForm extends Component {
                     </div>
                   </div>
                   { this.state.formError ? 
-                    <div className="error_label mt-4">
+                    <div className="error_label mt-4 text-center">
                       No email address with matching password was found
                     </div>
                     :null}

@@ -24,14 +24,9 @@ export class Fileupload extends Component {
     formData.append('file', files[0]);
     axios.post('/api/user/uploadimage', formData, config)
       .then(response => {
+        this.props.imagesHandler([...this.state.uploadedFiles, response.data]);
         this.setState({
           uploading: false,
-          uploadedFiles: [
-            ...this.state.uploadedFiles,
-            response.data
-          ]
-        }, () => {
-          this.props.imagesHandler(this.state.uploadedFiles)
         })
       })
   }
@@ -41,13 +36,7 @@ export class Fileupload extends Component {
       let images = this.state.uploadedFiles.filter(item=> {
         return item.public_id !== id;
       });
-      this.setState({
-        uploadedFiles: images
-      }, () => {
-        this.props.imagesHandler(images)
-      }, () => {
-        this.props.imagesHandler(images)
-      })
+      this.props.imagesHandler(images);
     })
   }
 
@@ -71,6 +60,11 @@ export class Fileupload extends Component {
         uploadedFiles: []
       }
     }
+    if(props.images && props.images !== state.uploadedFiles) {
+      return state = {
+        uploadedFiles: props.images
+      }
+    }
     return null;
   }
 
@@ -91,10 +85,6 @@ export class Fileupload extends Component {
             {this.showUploadedImages()}
             {
               this.state.uploading? (
-                // <div className="dropzone_box style={{
-                //   textAlign: 'center',
-                //   paddingTop: '60px'
-                // }}">
                   <div className="dropzone_box d-flex flex-column justify-content-center">
                   <CircularProgress className="mx-auto">
                     style={{color:'#00bcd4'}}
