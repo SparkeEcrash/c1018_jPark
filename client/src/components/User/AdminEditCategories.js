@@ -1,9 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 
-import { update, generateData, isFormValid, resetFields } from '../../components/utils/Form/formActions';
-import FormField from '../../components/utils/Form/formfield';
-
 import AdminAddWave from './AdminAddWave';
 import AdminAddSeries from './AdminAddSeries';
 
