@@ -12,7 +12,7 @@ import Login from './components/Login';
 import Register from './components/Register/Register';
 import UserDashboard from './components/User/UserDashboard';
 import EditProduct from './components/EditProduct'; 
-
+import NotFound from './components/NotFound';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
   faIgloo,
@@ -78,6 +78,7 @@ const Routes = () => {
         <Route path="/register" exact component={Auth(Register, false)} />
         <Route path="/user/dashboard" exact component={Auth(UserDashboard, true)} /> 
         <Route path="/product_edit/:id" exact component={Auth(EditProduct, true, true)} />
+        <Route component={Auth(NotFound, null)}/>
       </Switch>
     </Layout>
   );

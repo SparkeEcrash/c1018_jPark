@@ -3,8 +3,10 @@ import {
   GET_PRODUCTS_TO_SHOP,
   GET_SERIES,
   ADD_SERIES,
+  DELETE_SERIES,
   GET_WAVES,
   ADD_WAVE,
+  DELETE_WAVE,
   GET_PRODUCT_DETAIL,
   CLEAR_PRODUCT_DETAIL,
   SUBMIT_PRODUCT,
@@ -123,6 +125,22 @@ export function addSeries(dataToSubmit, existingSeries) {
     }
 }
 
+export function deleteSeries(dataToSubmit, existingSeries) {
+  const request = axios.delete(`${PRODUCT_SERVER}/series`, {data: {id: dataToSubmit, series: existingSeries}})
+    .then(response => {
+      return {
+        success: response.data.success,
+        series: response.data.series,
+        existing: response.data.existing
+      }
+    })
+
+    return {
+      type: DELETE_SERIES,
+      payload: request
+    }
+}
+
 export function addWave(dataToSubmit, existingWaves) {
   const request = axios.post(`${PRODUCT_SERVER}/wave`, dataToSubmit)
     .then(response => {
@@ -142,3 +160,18 @@ export function addWave(dataToSubmit, existingWaves) {
     }
 }
 
+export function deleteWave(dataToSubmit, existingWaves) {
+  const request = axios.delete(`${PRODUCT_SERVER}/wave`, {data: {id: dataToSubmit, waves: existingWaves}})
+    .then(response => {
+      return {
+        success: response.data.success,
+        waves: response.data.waves,
+        existing: response.data.existing
+      }
+    })
+
+    return {
+      type: DELETE_WAVE,
+      payload: request
+    }
+}

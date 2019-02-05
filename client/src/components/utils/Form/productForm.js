@@ -240,7 +240,13 @@ export class productForm extends Component {
 
     if(formIsValid) {
       console.log(dataToSubmitWithId);
-      this.props.dispatch(submitProduct(dataToSubmitWithId));
+      this.props.dispatch(submitProduct(dataToSubmitWithId)).then(response => {
+        if(response.success) {
+          this.props.history.push('/store')
+        } else {
+          this.props.alert.show('Edit Failed: An error occured')
+        }
+      })
     } else {
       this.setState({
         formError: true
@@ -303,7 +309,6 @@ export class productForm extends Component {
         formdata: newFormData
       })
     }
-    console.log(this.state)
   }
 
   componentWillUnmount() {

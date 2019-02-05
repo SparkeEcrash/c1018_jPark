@@ -5,7 +5,7 @@ import { update, generateData, isFormValid, resetFields } from'../../components/
 
 import { connect } from 'react-redux';
 import {withAlert} from 'react-alert';
-import { getSeries, addSeries } from '../../actions/products_actions';
+import { getSeries, addSeries, deleteSeries } from '../../actions/products_actions';
 
 export class AdminAddSeries extends Component {
 
@@ -35,13 +35,25 @@ export class AdminAddSeries extends Component {
   showCategoryItems = () => {
     return (this.props.products.series ?
       this.props.products.series.map((item, i) => (
-        <div className="category_item" key={item._id}>
+        <div className="category_item" key={item._id} onClick={()=>{this.deleteSeries(item._id)}}>
           {item.name}
         </div>
       ))
       : null
     )
     }
+
+  deleteSeries = id => {
+    let existingSeries = this.props.products.series;
+    this.props.dispatch(deleteSeries(id, existingSeries)).then(response => {
+      if(response.existing) {
+        this.props.alert.show('Delete Failed: Series is in use');
+      } 
+      if(response.success) {
+        this.props.alert.show('Series Deleted');
+      }
+    })
+  }
 
   updateForm = element => {
     const newFormdata = update(element, this.state.formdata, 'series');
@@ -64,7 +76,6 @@ export class AdminAddSeries extends Component {
     let dataToSubmit = generateData(this.state.formdata, 'series');
     let formIsValid = isFormValid(this.state.formdata, 'series');
     let existingSeries = this.props.products.series;
-  
 
     if(formIsValid) {
       this.props.dispatch(addSeries(dataToSubmit, existingSeries)).then(response => {

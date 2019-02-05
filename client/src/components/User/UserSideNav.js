@@ -26,7 +26,7 @@ const admin = [
     display: 'add_products'
   },
   {
-    name: 'Edit Categories',
+    name: 'Manage Categories',
     display: 'edit_categories'
   }
 ]
