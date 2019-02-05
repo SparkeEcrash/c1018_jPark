@@ -5,7 +5,7 @@ import { update, generateData, isFormValid, resetFields } from'../../components/
 
 import { connect } from 'react-redux';
 import {withAlert} from 'react-alert';
-import { getWaves, addWave } from '../../actions/products_actions';
+import { getWaves, addWave, deleteWave } from '../../actions/products_actions';
 
 export class AdminAddWave extends Component {
 
@@ -35,12 +35,24 @@ export class AdminAddWave extends Component {
   showCategoryItems = () => (
     this.props.products.waves ?
       this.props.products.waves.map((item, i) => (
-        <div className="category_item" key={item._id}>
+        <div className="category_item" key={item._id} onClick={()=>{this.deleteWave(item._id)}}>
           {item.name}
         </div>
       ))
       : null
   )
+
+  deleteWave = id => {
+    let existingWaves = this.props.products.waves;
+    this.props.dispatch(deleteWave(id, existingWaves)).then(response => {
+      if(response.existing) {
+        this.props.alert.show('Delete Failed: Wave is in use');
+      }
+      if(response.success) {
+        this.props.alert.show('Wave Deleted');
+      }
+    })
+  }
 
   updateForm = element => {
     const newFormdata = update(element, this.state.formdata, 'waves');

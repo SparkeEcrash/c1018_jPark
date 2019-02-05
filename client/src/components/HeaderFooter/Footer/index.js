@@ -10,22 +10,22 @@ const Footer = () => {
 						<h1 className="text-uppercase font-weight-bold text_yellow footer_title text-center d-inline-block">
 							contact us
 						</h1>
-						<div className="footer-icons my-5 d-flex justify-content-center">
-							{/* <a href="#" className="footer-icon mx-2"> */}
+						<div className="footer-icons my-5 d-flex justify-content-between">
+							<div className="footer-icon">
                 <FontAwesomeIcon icon={['fab', 'facebook']} />
-							{/* </a> */}
-							{/* <a href="#" className="footer-icon mx-2"> */}
+							</div>
+							<div className="footer-icon">
                 <FontAwesomeIcon icon={['fab', 'twitter']} />
-							{/* </a> */}
-							{/* <a href="#" className="footer-icon mx-2"> */}
+							</div>
+							<div className="footer-icon">
                 <FontAwesomeIcon icon={['fab', 'google-plus']} />
-							{/* </a> */}
-							{/* <a href="#" className="footer-icon mx-2"> */}
+							</div>
+							<div className="footer-icon">
                 <FontAwesomeIcon icon={['fab', 'instagram']} />
-							{/* </a> */}
-							{/* <a href="#" className="footer-icon mx-2"> */}
+							</div>
+							<div className="footer-icon">
                 <FontAwesomeIcon icon={['fab', 'youtube']} />
-							{/* </a> */}
+							</div>
 						</div>
 						<p className="text-muted text-capitalize w-75 mx-auto text-center">
 							© 2019 Gityo Amiibo

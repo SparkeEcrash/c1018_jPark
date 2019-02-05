@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import MyButton from '../utils/button';
 import { withRouter } from 'react-router-dom';
 import { withAlert } from 'react-alert';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import axios from 'axios';
 import { connect } from 'react-redux';
@@ -76,6 +77,7 @@ class Card extends Component {
   render() {
     const props = this.props; 
     let user = props.user.userData;
+    let color = this.generateRandomColor();
     return (
       <div className={`card_item_wrapper col-12 col-md-4 ${props.grid}`}>
         <div className="image" style={{
@@ -85,10 +87,15 @@ class Card extends Component {
         }}
         onClick={()=> {this.props.history.push(`/product_detail/${props._id}`)}}
         >
+        
+        
+        <div className={`search_icon ${color}`}><FontAwesomeIcon icon='search' /></div>
+        
         </div>
+
         <div className="action_container">
           <div className="tags">
-            <div className={`series ${this.generateRandomColor()}`}>
+            <div className={`series ${color}`}>
               {props.series.name}
             </div>
             <div className="name">

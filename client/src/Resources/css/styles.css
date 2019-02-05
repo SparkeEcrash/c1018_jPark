@@ -182,12 +182,15 @@ body {
 }
 
 .footer-icon {
+  font-size: 4rem;
   color: var(--mainYellow);
 }
 
 .footer-icon:hover {
   color: var(--mainWhite);
 }
+
+
 
 /* ############## HOME PAGE ################ */
 
@@ -300,6 +303,10 @@ body {
   width: 100%;
 }
 
+.add_series_list .category_item:hover {
+  background: var(--mainPink);
+}
+
 .add_wave_list {
   height: 30vh;
   background-color: white;
@@ -319,6 +326,10 @@ body {
   background: #999592;
   color: #fff;
   width: 100%;
+}
+
+.add_wave_list .category_item:hover {
+  background: var(--mainTurqoise);
 }
 
 .dropzone {
@@ -361,6 +372,20 @@ body {
   background-size: contain !important;
   background-repeat: no-repeat !important;
   border: 1px solid #f0f0f0;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.card_item_wrapper .image:hover {
+  opacity: 0.8;
+  transition: all 1s ease-in-out;
+}
+
+.card_item_wrapper .image:hover .search_icon {
+  opacity: 2;
+  transition: all 1s ease-in-out;
+  margin-left: 0;
 }
 
 .card_item_wrapper .tags .series,
@@ -396,6 +421,37 @@ body {
 }
 
 .card_item_wrapper .tags .series.pink{
+  color: var(--mainPink);
+}
+
+.card_item_wrapper .image .search_icon {
+  position: absolute;
+  font-size: 4rem;
+  left: 1.5vw;
+  opacity: 0;
+  margin-left: -50%;
+}
+.card_item_wrapper .image .search_icon.red {
+  color: var(--mainRed);
+}
+
+.card_item_wrapper .image .search_icon.green {
+  color: var(--mainGreen);
+}
+
+.card_item_wrapper .image .search_icon.blue {
+  color: var(--mainBlue);
+}
+
+.card_item_wrapper .image .search_icon.turqoise {
+  color: var(--mainTurqoise);
+}
+
+.card_item_wrapper .image .search_icon.orange {
+  color: var(--mainOrange);
+}
+
+.card_item_wrapper .image .search_icon.pink {
   color: var(--mainPink);
 }
 

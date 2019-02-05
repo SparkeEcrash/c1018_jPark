@@ -140,6 +140,32 @@ router.post('/api/product/series', auth, admin, (req, res)=>{
   })
 })
 
+router.delete('/api/product/series', auth, admin, (req, res)=> {
+  Amiibo.
+  find({ 'series': req.body.id }).
+  exec((err,docs) => {
+    if(err) return res.status(400).send(err);
+    if (docs.length) {
+        res.status(200).json({success: false, series: req.body.series, existing: true})
+    } else {
+      Series.findById(req.body.id)
+        .then(series => {
+          series.remove().then(() => Series.find({}, (err, series) => {
+            if(err) return res.status(400).send(err);
+            res.status(200).json({
+              success: true,
+              series: series,
+              existing: false
+            })
+          }))
+        })
+        .catch(err => {
+          res.status(404).json({success: false, err})
+        })
+    }
+  })
+})
+
 router.get('/api/product/series', (req, res)=> {
   Series.find({},(err, series)=>{
     if(err) return res.status(400).send(err);
@@ -162,6 +188,32 @@ router.post('/api/product/wave', auth, admin, (req, res) => {
     })
   })
 });
+
+router.delete('/api/product/wave', auth, admin, (req, res)=> {
+  Amiibo.
+  find({ 'wave': req.body.id }).
+  exec((err,docs) => {
+    if(err) return res.status(400).send(err);
+    if (docs.length) {
+        res.status(200).json({success: false, waves: req.body.waves, existing: true})
+    } else {
+      Wave.findById(req.body.id)
+        .then(wave => {
+          wave.remove().then(() => Wave.find({}, (err, waves) => {
+            if(err) return res.status(400).send(err);
+            res.status(200).json({
+              success: true,
+              waves: waves,
+              existing: false
+            })
+          }))
+        })
+        .catch(err => {
+          res.status(404).json({success: false, err})
+        })
+    }
+  })
+})
 
 router.get('/api/product/waves', (req, res) => {
   Wave.find({}, (err, waves)=>{
