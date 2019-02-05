@@ -1,4 +1,4 @@
-import React, { Fragment, Component } from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import {withAlert} from 'react-alert';
 import MyButton from "../utils/button";

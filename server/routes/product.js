@@ -96,18 +96,25 @@ router.get('/api/product/articles_by_id', (req, res)=> {
 })
 
 router.post('/api/product/article', auth, admin, (req, res)=> {
-  const amiibo = new Amiibo(req.body);
-  amiibo.save((err, doc)=> {
-    if(err) return res.json({success:false, err});
-    res.status(200).json({
-      success: true,
-      article: doc
+  if(req.body.product_id) {
+    Amiibo.findOneAndUpdate(
+      { _id: req.body.product_id }, 
+      { $set: req.body.dataToSubmit },
+      { new: true }
+    ).then(amiibo => res.json({success: true, article: amiibo}));
+  } else {
+    const amiibo = new Amiibo(req.body);
+    amiibo.save((err, doc) => {
+      if(err) return res.json({success:false, err});
+      res.status(200).json({
+        success: true,
+        article: doc
+      })
     })
-  })
+  } 
 })
 
 router.delete('/api/product/article', auth, admin, (req, res)=> {
-  console.log(req.body)
   Amiibo.findById(req.body.id)
     .then(amiibo => {
       amiibo.remove().then(() => res.json({ success: true }));

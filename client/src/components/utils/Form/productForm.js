@@ -7,7 +7,7 @@ import FileUpload from '../../../components/utils/Form/fileupload';
 
 import { connect } from 'react-redux';
 import {withAlert} from 'react-alert';
-import { getSeries, getWaves, addProduct, clearProduct, getProductDetail, clearProductDetail } from
+import { getSeries, getWaves, submitProduct, clearProduct, getProductDetail, clearProductDetail } from
 '../../../actions/products_actions';
 
 export class productForm extends Component {
@@ -44,9 +44,9 @@ export class productForm extends Component {
           className: 'form-control form-control-sm'
         },
         validation: {
-          required: true
+          required: false
         },
-        valid: false,
+        valid: true,
         touched: false,
         validationMessage: '',
         showlabel: false
@@ -211,7 +211,7 @@ export class productForm extends Component {
     let dataToSubmit = generateData(this.state.formdata, 'products');
     let formIsValid = isFormValid(this.state.formdata, 'products');
     if(formIsValid) {
-      this.props.dispatch(addProduct(dataToSubmit)).then(()=> {
+      this.props.dispatch(submitProduct(dataToSubmit)).then(()=> {
         if(this.props.products.addProduct.success) {
           this.props.alert.show(`${this.state.formdata.name.value} added!`)
           this.resetFieldHandler();
@@ -230,10 +230,21 @@ export class productForm extends Component {
 
   editProduct = (event) => {
     event.preventDefault(); 
-    let dataToSubmit = generateData(this.state.formdata, 'products');
     let formIsValid = isFormValid(this.state.formdata, 'products');
+    let dataToSubmit = generateData(this.state.formdata, 'products');
+
+    let dataToSubmitWithId = {
+      product_id: this.props.products.prodDetail._id,
+      dataToSubmit: dataToSubmit
+    }
+
     if(formIsValid) {
-      console.log(dataToSubmit);
+      console.log(dataToSubmitWithId);
+      this.props.dispatch(submitProduct(dataToSubmitWithId));
+    } else {
+      this.setState({
+        formError: true
+      })
     }
   }
 

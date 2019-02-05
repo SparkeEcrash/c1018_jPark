@@ -7,7 +7,7 @@ import {
   ADD_WAVE,
   GET_PRODUCT_DETAIL,
   CLEAR_PRODUCT_DETAIL,
-  ADD_PRODUCT,
+  SUBMIT_PRODUCT,
   CLEAR_PRODUCT,
   DELETE_PRODUCT
 } from './types';
@@ -77,12 +77,12 @@ export function getWaves() {
     }
 }
 
-export function addProduct(datatoSubmit){
+export function submitProduct(datatoSubmit){
   const request = axios.post(`${PRODUCT_SERVER}/article`, datatoSubmit)
     .then(response => response.data);
 
     return {
-      type: ADD_PRODUCT,
+      type: SUBMIT_PRODUCT,
       payload: request
     }
 }
