@@ -4,10 +4,10 @@
   "description": "gityo_amiibo server",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node server/server.js",
     "dev": "npm-run-all --parallel dev:*",
     "dev:client": "npm start --prefix client",
-    "dev:server": "nodemon index.js",
+    "dev:server": "nodemon server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,8 +21,17 @@
   },
   "homepage": "https://github.com/SparkeEcrash/c1018_jPark#readme",
   "dependencies": {
+    "bcrypt": "^2.0.1",
+    "body-parser": "^1.18.3",
+    "cloudinary": "^1.13.2",
+    "cookie-parser": "^1.4.3",
     "cors": "^2.8.5",
+    "dotenv": "^6.2.0",
     "express": "^4.16.4",
+    "express-formidable": "^1.2.0",
+    "jsonwebtoken": "^8.4.0",
+    "mongoose": "^5.4.5",
+    "multer": "^1.4.1",
     "mysql": "^2.16.0"
   },
   "devDependencies": {

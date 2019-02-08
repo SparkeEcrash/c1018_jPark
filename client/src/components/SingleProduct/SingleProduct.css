@@ -1,0 +1,8 @@
+.single_product_background {
+  min-height: calc(100vh - 73.35px);
+  background: url('/img/single_product.png');
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
