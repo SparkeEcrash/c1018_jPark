@@ -2,7 +2,7 @@
   "name": "c1018_jpark_server",
   "version": "1.0.0",
   "description": "gityo_amiibo server",
-  "main": "server.js",
+  "main": "server/server.js",
   "scripts": {
     "start": "node server/server.js",
     "dev": "npm-run-all --parallel dev:*",
