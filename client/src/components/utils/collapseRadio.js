@@ -67,6 +67,7 @@ export class CollapseRadio extends Component {
           <Collapse in={this.state.open} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
               <RadioGroup 
+                style={{padding:'0 20px'}}
                 aria-label="prices" 
                 name="prices" 
                 value={this.state.value} 

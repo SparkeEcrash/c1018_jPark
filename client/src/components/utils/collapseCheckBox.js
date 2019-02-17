@@ -38,7 +38,8 @@ export class CollapseCheckbox extends Component {
   renderList = () => (
     this.props.list ?
       this.props.list.map((value)=>(
-        <ListItem key={value._id} style={{padding:'10px 0'}}>
+        <ListItem key={value._id} style={{padding:'10px 23px'}}>
+        {/* change the horizontal value '23px' to adjust the column to match the max width of series names */}
           <ListItemText primary={value.name}/>
           <ListItemSecondaryAction>
             <Checkbox color="primary" onChange={this.handleToggle(value._id)} checked={this.state.checked.indexOf(value._id) !== -1}>

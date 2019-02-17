@@ -24,7 +24,7 @@ export default function formfield({formdata, change, id}) {
             <div className="input-group">
               { formdata.showlabel ? 
               <div className="input-group-prepend">
-                <span className="input-group-text">
+                <span className="input-group-text equalize_width justify-content-center">
                   <FontAwesomeIcon icon={formdata.config.label}></FontAwesomeIcon>
                 </span>
               </div>

@@ -39,6 +39,11 @@ body {
                                   supported by Chrome and Opera */
 }
 
+/* ############## INPUT FIELDS ################ */
+.equalize_width {
+  width: 40px;
+}
+
 /* ############## AUTH SPIN ################ */
 .main_loader {
   text-align: center;
@@ -188,6 +193,7 @@ body {
 
 .footer-icon:hover {
   color: var(--mainWhite);
+  cursor: pointer;
 }
 
 
