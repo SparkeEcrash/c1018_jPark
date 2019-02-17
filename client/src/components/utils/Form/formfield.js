@@ -11,7 +11,6 @@ export default function formfield({formdata, change, id}) {
         </div>
       )
     }
-
     return errorMessage;
   }
 
@@ -35,6 +34,7 @@ export default function formfield({formdata, change, id}) {
                 value={formdata.value}
                 onBlur={(event) => change({event, id, blur:true})}
                 onChange={(event) => change({event, id, changed:true})}
+                spellCheck='false'
               ></input>
             </div>
             {showError()}
@@ -82,6 +82,7 @@ export default function formfield({formdata, change, id}) {
               value={formdata.value}
               onBlur={(event)=> change({event, id, blur:true})}
               onChange={(event)=> change({event, id, changed:true})}
+              spellCheck='false'
             />
             {showError()}
           </div>

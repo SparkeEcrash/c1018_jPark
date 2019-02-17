@@ -167,10 +167,13 @@ router.delete('/api/product/series', auth, admin, (req, res)=> {
 })
 
 router.get('/api/product/series', (req, res)=> {
-  Series.find({},(err, series)=>{
-    if(err) return res.status(400).send(err);
-    res.status(200).send(series)
-  })
+  Series.
+    find({}).
+    sort('name').
+    exec((err, series) => {
+      if(err) return res.status(400).send(err);
+      res.status(200).send(series);
+    })
 })
 
 /**

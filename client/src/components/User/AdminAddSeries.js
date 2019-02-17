@@ -33,15 +33,21 @@ export class AdminAddSeries extends Component {
   }
 
   showCategoryItems = () => {
+    function compare(a, b) {
+      if(a.name < b.name)
+        return -1;
+      if(a.name > b.name)
+        return 1;
+    }
     return (this.props.products.series ?
-      this.props.products.series.map((item, i) => (
+      this.props.products.series.sort(compare).map((item, i) => (
         <div className="category_item" key={item._id} onClick={()=>{this.deleteSeries(item._id)}}>
           {item.name}
         </div>
       ))
       : null
     )
-    }
+  }
 
   deleteSeries = id => {
     let existingSeries = this.props.products.series;

@@ -7,22 +7,22 @@ export const price = [
   {
     "_id": 1,
     "name": "$0 to $9",
-    "array": [0, 9]
+    "array": [0, 9.99]
   },
   {
     "_id": 2,
     "name": "$10 to $14",
-    "array": [10, 14]
+    "array": [10, 14.99]
   },
   {
     "_id": 3,
     "name": "$15 to $19",
-    "array": [15, 19]
+    "array": [15, 19.99]
   },
   {
     "_id": 4,
     "name": "$20 to $29",
-    "array": [20, 29]
+    "array": [20, 29.99]
   },
   {
     "_id": 5,
