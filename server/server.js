@@ -8,16 +8,17 @@ const mongoose = require('mongoose');
 const cloudinary = require('cloudinary');
 
 //this is for testing env variables before deployment
-// require('dotenv').config();
-
-mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGO_URI);
+require('dotenv').config();
 
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 app.use(cookieParser());
 
 app.use(express.static('client/build'))
+
+mongoose.Promise = global.Promise;
+console.log('hi', process.env.DATABASE);
+mongoose.connect(process.env.DATABASE, {useNewUrlParser: true});
 
 cloudinary.config({
   cloud_name: process.env.CLOUD_NAME,
