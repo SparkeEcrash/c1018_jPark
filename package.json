@@ -14,6 +14,9 @@
     "type": "git",
     "url": "git+https://github.com/SparkeEcrash/c1018_jPark.git"
   },
+  "engines": {
+    "node":"10.13.0"
+  },
   "author": "James Park",
   "license": "ISC",
   "bugs": {
