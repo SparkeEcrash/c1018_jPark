@@ -8,7 +8,8 @@
     "dev": "npm-run-all --parallel dev:*",
     "dev:client": "npm start --prefix client",
     "dev:server": "nodemon server/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build"
   },
   "repository": {
     "type": "git",
