@@ -7,10 +7,11 @@ const app = express();
 const mongoose = require('mongoose');
 const cloudinary = require('cloudinary');
 
-require('dotenv').config();
+//this is for testing env variables before deployment
+// require('dotenv').config();
 
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.DATABASE);
+mongoose.connect(process.env.MONGODB_URI);
 
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
