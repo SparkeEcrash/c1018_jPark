@@ -17,8 +17,7 @@ app.use(cookieParser());
 app.use(express.static('client/build'))
 
 mongoose.Promise = global.Promise;
-console.log('hi', process.env.DATABASE);
-mongoose.connect(process.env.DATABASE, {useNewUrlParser: true});
+mongoose.connect(process.env.DATABASE, { useNewUrlParser: true });
 
 cloudinary.config({
   cloud_name: process.env.CLOUD_NAME,

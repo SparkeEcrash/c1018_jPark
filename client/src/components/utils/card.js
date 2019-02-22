@@ -110,7 +110,7 @@ class Card extends Component {
               <MyButton
                 type="default"
                 altClass="card_link"
-                title="View product"
+                title="View"
                 linkTo={`/product_detail/${props._id}`}
                 addStyles={{
                   margin: '0 0 0 0'

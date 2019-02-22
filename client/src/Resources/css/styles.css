@@ -405,7 +405,10 @@ input:-webkit-autofill:active {
 .card_item_wrapper .tags .name,
 .card_item_wrapper .tags .price {
     text-align: center;
-    margin: 5px 0;
+		margin: 5px 0;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
 }
 
 .card_item_wrapper .tags .series {
@@ -496,8 +499,12 @@ input:-webkit-autofill:active {
     color: var(--mainGrey);
     background: white;
     transition: all 200ms ease-in;
-    cursor: pointer;
+		cursor: pointer;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
 }
+
 .card_link:hover,
 .bag_link:hover,
 .add_to_cart_link:hover,
@@ -506,7 +513,7 @@ input:-webkit-autofill:active {
 .edit_amiibo_link:hover {
     background: var(--mainGrey);
     color: white;
-    text-decoration: none;
+		text-decoration: none;
 }
 
 .add_to_cart_link svg {
@@ -538,6 +545,14 @@ input:-webkit-autofill:active {
   text-align: center;
   padding: 10vh 0;
 }
+
+.add_series_list {
+  height: 30vh;
+  background-color: white;
+  overflow-y: scroll;
+  width: 100%;
+}
+
 
 /* ############## SINGLE PRODUCT ################ */
 
