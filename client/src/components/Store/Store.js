@@ -104,19 +104,19 @@ export class Shop extends Component {
           <div className="row">
             <div className="col-12 col-md-3 col-xl-2 order-md-1 order-2">
               <CollapseCheckbox
-                initState={false}
+                initState={true}
                 title="Series"
                 list={products.series}
                 handleFiltersProp = {(filters)=>this.handleFilters(filters,'series')}
               ></CollapseCheckbox>
               <CollapseCheckbox
-                initState={true}
+                initState={false}
                 title="Waves"
                 list={products.waves}
                 handleFiltersProp={(filters)=>this.handleFilters(filters,'wave')}
               ></CollapseCheckbox>
               <CollapseRadio
-                initState={true}
+                initState={false}
                 title="Price"
                 list={price}
                 handleFiltersProp={(filters)=>this.handleFilters(filters,'price')}

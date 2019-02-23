@@ -198,6 +198,13 @@ input:-webkit-autofill:active {
   color: var(--mainYellow);
 }
 
+@media screen and (max-width: 767px) {
+	.footer-icon {
+		font-size: 2rem;
+	}
+}
+
+
 .footer-icon:hover {
   color: var(--mainWhite);
   cursor: pointer;
