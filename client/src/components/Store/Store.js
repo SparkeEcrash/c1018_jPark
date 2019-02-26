@@ -20,7 +20,7 @@ export class Shop extends Component {
       wave: [], 
       price: []
     },
-    grid: 'three-per-row'
+		grid: 'three-per-row',
   }
 
   componentDidMount() {
