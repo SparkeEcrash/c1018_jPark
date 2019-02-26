@@ -4,7 +4,7 @@ React + Redux and MongoDB eCommerce Website
 
 ## Hosted
 
-[Here](http//www.gityoamiibo.com)
+(http//www.gityoamiibo.com)
 
 ## Features
 
