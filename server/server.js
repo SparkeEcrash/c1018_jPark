@@ -35,12 +35,12 @@ app.use(userRoutes);
 app.use(productsRoute);
 
 // DEFAULT
-if(process.env.NODE_ENV === 'production') {
+// if(process.env.NODE_ENV === 'production') {
   const path = require('path');
   app.get('/*', (req, res) => {
     res.sendFile(path.resolve(__dirname, '../client', 'build', 'index.html'))
   })
-}
+// }
 
 app.listen(PORT, () => {
   console.log('Server running @ localhost:' + PORT);
